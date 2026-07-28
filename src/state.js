@@ -13,6 +13,7 @@ const DEFAULT_STATE = {
   progress: {
     completedScenarioIds: [],
     answers: {},        // scenarioId → { correct, attempts, lastAt, reflection }
+    history: [],        // append-only attempt events; older saved states migrate safely
     competency: {},     // tag → { right, wrong, streakRight, streakWrong }
     currentTier: 1,
     moduleTier: {},     // moduleId → tier player is currently in
@@ -42,6 +43,7 @@ function loadAll() {
       if (raw) s[key] = { ...s[key], ...JSON.parse(raw) };
     } catch { /* corrupt key — ignore, default wins */ }
   }
+  if (!Array.isArray(s.progress.history)) s.progress.history = [];
   if (!s.meta.firstSeenAt) s.meta.firstSeenAt = Date.now();
   s.meta.lastSeenAt = Date.now();
   return s;
@@ -78,15 +80,21 @@ export function clearAll() {
 
 // ---- Progress ----
 
-export function recordAnswer(scenario, { correct, reflection }) {
+export function recordAnswer(scenario, { correct }) {
   const id = scenario.id;
   const prev = state.progress.answers[id] || { attempts: 0 };
+  const answeredAt = Date.now();
+  const reviewDueAt = correct
+    ? (prev.attempts > 0 ? answeredAt + 14 * 86400000 : answeredAt + 30 * 86400000)
+    : answeredAt + 14 * 86400000;
   state.progress.answers[id] = {
     correct,
     attempts: prev.attempts + 1,
-    lastAt: Date.now(),
-    reflection: reflection || prev.reflection || null,
+    lastAt: answeredAt,
+    reviewDueAt,
+    reflection: prev.reflection || null,
   };
+  state.progress.history.push({ scenarioId: id, correct: !!correct, at: answeredAt });
   if (correct && !state.progress.completedScenarioIds.includes(id)) {
     state.progress.completedScenarioIds.push(id);
   }
@@ -99,6 +107,23 @@ export function recordAnswer(scenario, { correct, reflection }) {
   if (!state.progress.sessionStartAt) state.progress.sessionStartAt = Date.now();
   persist("progress");
   notify();
+}
+
+export function recordReflection(scenarioId, reflection) {
+  const answer = state.progress.answers[scenarioId];
+  if (!answer || !reflection) return;
+  answer.reflection = reflection;
+  const latest = [...state.progress.history].reverse().find(item => item.scenarioId === scenarioId);
+  if (latest) latest.reflection = reflection;
+  persist("progress");
+  notify();
+}
+
+export function reviewQueue(now = Date.now()) {
+  return Object.entries(state.progress.answers)
+    .filter(([, answer]) => answer.reviewDueAt && answer.reviewDueAt <= now)
+    .sort((a, b) => a[1].reviewDueAt - b[1].reviewDueAt)
+    .map(([scenarioId]) => scenarioId);
 }
 
 export function setModuleTier(moduleId, tier) {
@@ -139,7 +164,7 @@ export function setMeta(key, value) {
 
 export function exportTranscript() {
   return {
-    schema: "quality-quest-transcript@1",
+    schema: "quality-quest-transcript@2",
     exportedAt: new Date().toISOString(),
     profile: state.profile,
     progress: state.progress,

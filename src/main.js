@@ -1,8 +1,8 @@
 // Quality Quest — application orchestrator.
 
-import { getState, saveProfile, recordAnswer, awardBadge, setMeta, exportTranscript, clearAll, subscribe } from "./state.js";
+import { getState, saveProfile, recordAnswer, recordReflection, reviewQueue, awardBadge, setMeta, exportTranscript, clearAll } from "./state.js";
 import { loadContent } from "./content.js";
-import { buildPath, buildModulePath, checkBadges } from "./engine.js";
+import { buildPath, buildModulePath, buildReviewPath, recommendNext, checkBadges } from "./engine.js";
 import { mount, h } from "./ui/dom.js";
 import { renderSplash } from "./ui/splash.js";
 import { renderOnboarding } from "./ui/onboarding.js";
@@ -14,7 +14,7 @@ import { renderCaseFile } from "./ui/caseFile.js";
 import { setupInstall } from "./ui/install.js";
 
 const appRoot = document.getElementById("app-root");
-const route = { screen: "splash", current: null, path: [], pathIndex: 0, lastResult: null };
+const route = { screen: "splash", current: null, path: [], pathIndex: 0, lastResult: null, nextRecommendation: null };
 
 let content;
 
@@ -81,7 +81,16 @@ function renderProfileScreen(state) {
     },
     onMap:  () => { route.screen = "summary"; render(); },
     onPlay: () => startPath(),
+    onReview: () => startReviewPath(),
+    reviewCount: reviewQueue().length,
   }));
+}
+
+function startReviewPath() {
+  route.path = buildReviewPath(content.scenarios);
+  route.pathIndex = 0;
+  route.screen = route.path.length ? "scenario" : "profile";
+  render();
 }
 
 function startPath() {
@@ -140,6 +149,7 @@ function renderScenarioScreen(state) {
     onAnswer: (result) => {
       recordAnswer(scenario, { correct: result.correct });
       route.lastResult = result;
+      route.nextRecommendation = recommendNext(scenario, result.correct, content.scenarios);
       route.screen = "debrief";
       render();
     },
@@ -150,13 +160,20 @@ function renderDebriefScreen(state) {
   const scenario = route.current;
   mount(appRoot, renderDebrief({
     scenario,
+    profile: state.profile,
     result: route.lastResult,
-    isLast: route.pathIndex >= route.path.length - 1,
-    onReflect: (text) => recordAnswer(scenario, { correct: route.lastResult.correct, reflection: text }),
+    recommendation: route.nextRecommendation,
+    isLast: route.pathIndex >= route.path.length - 1 && !route.nextRecommendation?.next,
+    onReflect: (text) => recordReflection(scenario.id, text),
     onNext: () => {
       // Re-check badges after each answer.
       const newly = checkBadges(getState(), content.scenarios);
       for (const b of newly) awardBadge(b);
+      const suggested = route.nextRecommendation?.next;
+      if (suggested && !route.path.slice(route.pathIndex + 1).some(item => item.id === suggested.id)) {
+        route.path.splice(route.pathIndex + 1, 0, suggested);
+      }
+      route.nextRecommendation = null;
       if (route.pathIndex >= route.path.length - 1) {
         route.screen = "casefile";
       } else {
@@ -174,6 +191,7 @@ function renderCaseFileScreen(state) {
     library: content.scenarios,
     completedIds: state.progress.completedScenarioIds,
     answers: state.progress.answers,
+    history: state.progress.history,
     badges: state.badges,
     onBack: () => { route.screen = "summary"; render(); },
     onPrint: () => window.print(),

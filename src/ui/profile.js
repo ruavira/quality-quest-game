@@ -24,7 +24,7 @@ function settingLabel(id) {
   return SETTINGS.find(s => s.id === id)?.label ?? id;
 }
 
-export function renderProfile({ profile, onSave, onMap, onPlay }) {
+export function renderProfile({ profile, onSave, onMap, onPlay, onReview, reviewCount = 0 }) {
   // If no profile yet, go straight to the onboarding form.
   if (!profile) {
     return renderOnboarding({
@@ -136,6 +136,8 @@ export function renderProfile({ profile, onSave, onMap, onPlay }) {
         h("div", { class: "profile-actions" },
           h("button", { class: "btn btn-primary", onclick: onPlay },
             "Continue recommended path"),
+          reviewCount > 0 ? h("button", { class: "btn btn-secondary", onclick: onReview },
+            `Review ${reviewCount} due skill${reviewCount === 1 ? "" : "s"}`) : null,
           h("button", { class: "btn btn-secondary", onclick: onMap },
             "View module map"),
         ),

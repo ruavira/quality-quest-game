@@ -2,8 +2,10 @@
 
 import { h, clear } from "./dom.js";
 import { renderChart } from "../charts.js";
+import { localizeValue } from "../terminology.js";
 
 export function renderScenario({ scenario, profile, pathIndex, pathLength, onAnswer }) {
+  scenario = localizeValue(scenario, profile);
   const root = h("section", { class: "card" });
   const tierLabel = scenario.tier === 1 ? "Apprentice" : scenario.tier === 2 ? "Practitioner" : "Architect";
 
@@ -498,7 +500,7 @@ function branching(wrap, scenario) {
 
 // ---- helpers ----
 
-function textToHtml(text, profile) {
+export function textToHtml(text, profile) {
   if (!text) return "";
   const swapped = swapGlossary(text, profile);
   // Lightweight markdown: paragraphs, **bold**, _italic_
@@ -506,22 +508,4 @@ function textToHtml(text, profile) {
     .split(/\n{2,}/).map(p => `<p>${p.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/_(.+?)_/g, "<em>$1</em>")}</p>`).join("");
 }
 
-function swapGlossary(text, profile) {
-  // Replace {{token}} placeholders using a defaults map for templates baked into scenario text.
-  const lmic = isLmicSetting(profile?.setting);
-  const SWAPS = {
-    "{{board}}":  lmic ? "directorate brief" : "board report",
-    "{{exec}}":   lmic ? "Medical Director" : "Chief Medical Officer",
-    "{{exec2}}":  lmic ? "Programme Director" : "Chief Quality Officer",
-    "{{ehr}}":    lmic ? "HMIS / DHIS2 export" : "EHR query",
-    "{{region}}": lmic ? "district" : "region",
-    "{{accrediting_body}}": lmic ? "SafeCare assessor" : "Joint Commission surveyor",
-  };
-  let out = text;
-  for (const [k, v] of Object.entries(SWAPS)) out = out.split(k).join(v);
-  return out;
-}
-
-function isLmicSetting(setting) {
-  return setting && ["district_hospital","phc_clinic","moh_office","donor_programme","mission_hospital","community_outreach"].includes(setting);
-}
+function swapGlossary(text, profile) { return localizeValue(text, profile); }

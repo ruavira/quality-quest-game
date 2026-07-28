@@ -4,11 +4,21 @@
   "tier": 2,
   "lo_id": "B.2.2",
   "itemType": "MATCH",
-  "chartType": "none",
+  "chartType": "driverDiagram",
   "competency_tags": ["driver_diagram", "change_ideas"],
   "setting_variant": "lower_resource",
   "title": "Build a driver diagram",
   "brief": "Aim: **'Reduce the rate of surgical-site infections (SSI) at Abubakar District Hospital from 14% to below 4% within 9 months.'**\n\nThe improvement team has agreed on three primary drivers:\n- **Primary Driver 1 — Pre-operative preparation**\n- **Primary Driver 2 — Intraoperative sterile technique**\n- **Primary Driver 3 — Post-operative wound care**\n\nSix change ideas have been proposed. Place each idea under the primary driver it most directly addresses.",
+  "exhibit": {
+    "chartType": "driverDiagram",
+    "title": "SSI prevention driver diagram",
+    "aim": "Reduce surgical-site infections from 14% to below 4% within 9 months.",
+    "primaryDrivers": [
+      { "label": "Pre-operative preparation", "changeIdeas": ["Skin preparation", "Antibiotic timing"] },
+      { "label": "Intraoperative sterile technique", "changeIdeas": ["Sterility stop", "Instrument count"] },
+      { "label": "Post-operative wound care", "changeIdeas": ["Wound inspection", "Discharge education"] }
+    ]
+  },
   "task": {
     "stem": "Match each change idea to its primary driver.",
     "items": [

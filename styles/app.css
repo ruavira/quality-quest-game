@@ -706,3 +706,21 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 svg [tabindex] { cursor: pointer; }
 svg [tabindex]:focus { outline: none; }
+svg [tabindex]:focus-visible {
+  stroke: var(--warn-700);
+  stroke-width: 4px;
+}
+
+.pacing-note {
+  margin-top: var(--sp-3);
+  padding: var(--sp-3);
+  border-left: 4px solid var(--brand-600);
+  background: var(--brand-100);
+  border-radius: var(--r-sm);
+}
+
+.evidence-list {
+  display: grid;
+  gap: var(--sp-2);
+  padding-left: 20px;
+}

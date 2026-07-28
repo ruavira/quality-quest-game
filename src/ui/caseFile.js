@@ -1,19 +1,28 @@
 import { h } from "./dom.js";
+import { localizeValue } from "../terminology.js";
+import { ROLES, SETTINGS } from "./onboarding.js";
 
 const BADGE_LIBRARY = {
-  signal_spotter:          { title: "Signal Spotter",         desc: "5 correct calls + 5 correct non-calls on run-chart signals." },
-  operational_definition:  { title: "Operational Definition", desc: "Built 3 well-formed operational definitions." },
-  family_of_measures:      { title: "Family of Measures",     desc: "Balanced outcome / process / balancing picks." },
-  board_ready:             { title: "Board-Ready",            desc: "Spotted the 'target on a control chart' category error." },
-  equity_lens:             { title: "Equity Lens",            desc: "Stratified data when it changed the story." },
+  signal_spotter:          { title: "Signal Spotter",         desc: "Correctly called three signals and rejected two noise patterns." },
+  operational_definition:  { title: "Operational Definition", desc: "Demonstrated operational definitions in construction and free-writing tasks." },
+  family_of_measures:      { title: "Family of Measures",     desc: "Demonstrated classification and applied family-of-measures decisions." },
+  board_ready:             { title: "Board-Ready",            desc: "Completed two distinct board-facing data judgements." },
+  equity_lens:             { title: "Equity Lens",            desc: "Demonstrated equity interpretation in two scenarios." },
   reflective_practitioner: { title: "Reflective Practitioner",desc: "Wrote 3 reflections after scenarios." },
-  curriculum_connoisseur:  { title: "Curriculum Connoisseur", desc: "Solved at least one scenario in every MVP module." },
+  curriculum_connoisseur:  { title: "Curriculum Connoisseur", desc: "Solved at least one scenario in all eight modules." },
 };
 
-export function renderCaseFile({ profile, library, completedIds, answers, badges, onBack, onExport, onPrint }) {
-  const lastThree = completedIds.slice(-3).map(id => library.find(s => s.id === id)).filter(Boolean);
+export function renderCaseFile({ profile, library, completedIds, answers, history = [], badges, onBack, onExport, onPrint }) {
+  const attemptHistory = history.length ? history : legacyHistory(answers);
+  const recentIds = [...attemptHistory].reverse().map(item => item.scenarioId)
+    .filter((id, index, all) => all.indexOf(id) === index).slice(0, 3);
+  const lastThree = recentIds.map(id => library.find(s => s.id === id)).filter(Boolean)
+    .map(s => localizeValue(s, profile));
   const totalAttempts = Object.values(answers).reduce((a, b) => a + (b.attempts || 0), 0);
-  const correctCount = Object.values(answers).filter(a => a.correct).length;
+  const attemptedIds = Object.keys(answers);
+  const demonstrated = competencyEvidence(library, completedIds);
+  const practised = new Set(attemptedIds.flatMap(id => library.find(s => s.id === id)?.competency_tags || []));
+  const developing = [...practised].filter(tag => !demonstrated.has(tag));
 
   const root = h("section", { class: "card" });
   root.append(h("p", { class: "eyebrow" }, "Quality Quest — Case File"));
@@ -22,15 +31,27 @@ export function renderCaseFile({ profile, library, completedIds, answers, badges
 
   root.append(h("p", { class: "eyebrow", style: { marginTop: "16px" } }, "Profile"));
   root.append(h("p", {},
-    "Roles: ", (profile?.roles || []).join(", ") || "—", "  ·  ",
-    "Setting: ", profile?.setting || "—"));
+    "Roles: ", (profile?.roles || []).map(id => labelFor(ROLES, id)).join(", ") || "—", "  ·  ",
+    "Setting: ", profile?.setting ? labelFor(SETTINGS, profile.setting) : "—"));
 
-  root.append(h("p", { class: "eyebrow", style: { marginTop: "16px" } }, "Performance summary"));
+  root.append(h("p", { class: "eyebrow", style: { marginTop: "16px" } }, "Practice summary"));
   root.append(h("p", {},
-    `Scenarios completed: ${completedIds.length}  ·  Items answered correctly: ${correctCount} / ${totalAttempts}  ·  Badges earned: ${badges.length}`));
+    `${totalAttempts} practice attempt${totalAttempts === 1 ? "" : "s"} across ${attemptedIds.length} scenario${attemptedIds.length === 1 ? "" : "s"}. ` +
+    `${demonstrated.size} competenc${demonstrated.size === 1 ? "y is" : "ies are"} demonstrated; ${developing.length} still developing. ` +
+    `${badges.length} evidence badge${badges.length === 1 ? "" : "s"} earned.`));
+
+  if (practised.size) {
+    root.append(h("p", { class: "eyebrow", style: { marginTop: "16px" } }, "Competency evidence"));
+    const evidence = h("ul", { class: "evidence-list" });
+    for (const tag of [...practised].sort()) {
+      evidence.append(h("li", {}, h("strong", {}, humanize(tag)), " — ",
+        demonstrated.has(tag) ? "demonstrated across question types" : "developing through practice"));
+    }
+    root.append(evidence);
+  }
 
   if (lastThree.length) {
-    root.append(h("p", { class: "eyebrow", style: { marginTop: "16px" } }, "Your last three scenarios"));
+    root.append(h("p", { class: "eyebrow", style: { marginTop: "16px" } }, "Your three most recent scenarios"));
     const list = h("ol", { style: { paddingLeft: "18px", margin: 0 } });
     for (const s of lastThree) {
       const a = answers[s.id] || {};
@@ -74,4 +95,30 @@ export function renderCaseFile({ profile, library, completedIds, answers, badges
 
 function summarise(s) {
   return s.brief?.split(/\n+/)[0]?.slice(0, 180) + (s.brief?.length > 180 ? "…" : "");
+}
+
+function competencyEvidence(library, completedIds) {
+  const typesByTag = new Map();
+  for (const id of completedIds) {
+    const scenario = library.find(s => s.id === id);
+    if (!scenario) continue;
+    for (const tag of scenario.competency_tags || []) {
+      if (!typesByTag.has(tag)) typesByTag.set(tag, new Set());
+      typesByTag.get(tag).add(scenario.itemType);
+    }
+  }
+  return new Set([...typesByTag].filter(([, types]) => types.size >= 2).map(([tag]) => tag));
+}
+
+function legacyHistory(answers) {
+  return Object.entries(answers).sort((a, b) => a[1].lastAt - b[1].lastAt)
+    .map(([scenarioId, answer]) => ({ scenarioId, correct: answer.correct, at: answer.lastAt }));
+}
+
+function humanize(tag) {
+  return tag.replaceAll("_", " ").replace(/\b\w/g, letter => letter.toUpperCase());
+}
+
+function labelFor(options, id) {
+  return options.find(option => option.id === id)?.label ?? humanize(id);
 }

@@ -148,6 +148,17 @@ export function buildModulePath(moduleId, profile, contentLibrary, { length = 20
     .slice(0, length);
 }
 
+export function buildReviewPath(contentLibrary, { length = 8, now = Date.now() } = {}) {
+  const state = getState();
+  const due = new Set(Object.entries(state.progress.answers)
+    .filter(([, answer]) => answer.reviewDueAt && answer.reviewDueAt <= now)
+    .map(([id]) => id));
+  return contentLibrary
+    .filter(s => due.has(s.id))
+    .sort((a, b) => state.progress.answers[a.id].reviewDueAt - state.progress.answers[b.id].reviewDueAt)
+    .slice(0, length);
+}
+
 // ---- Scoring ----
 
 export function scoreAnswer(scenario, answer) {
@@ -162,34 +173,44 @@ function pointsFor(scenario) {
 
 // ---- Adaptive logic (competency-based) ----
 
-export function recommendNext(scenario, correct, contentLibrary) {
-  const state = getState();
+export function recommendNext(scenario, correct, contentLibrary, state = getState()) {
   const tags = scenario.competency_tags || [];
-  // If two consecutive wrong on any tag → remediation (one tier below, same tag).
+  // After two consecutive misses, change the example while keeping the competency.
   for (const tag of tags) {
     const c = state.progress.competency[tag];
-    if (c && c.streakWrong >= 2 && scenario.tier > 1) {
+    if (c && c.streakWrong >= 2) {
       const remed = contentLibrary
         .filter(s =>
-          s.tier === scenario.tier - 1 &&
+          s.id !== scenario.id &&
+          s.tier <= scenario.tier &&
           (s.competency_tags || []).includes(tag) &&
           !state.progress.completedScenarioIds.includes(s.id))
-        .sort((a, b) => a.id.localeCompare(b.id))[0];
+        .sort((a, b) => a.tier - b.tier || a.id.localeCompare(b.id))[0];
       if (remed) return { action: "remediate", next: remed, tag };
     }
   }
-  // Promotion: ≥ 2 distinct item types correct in current tier across this module.
-  const tierCoverage = countItemTypeCoverage(scenario.module, scenario.tier);
-  if (tierCoverage >= 2) return { action: "promote", next: null };
+
+  // Promotion requires correct evidence from at least two item types at this tier.
+  const tierCoverage = countItemTypeCoverage(scenario.module, scenario.tier, contentLibrary, state);
+  if (correct && tierCoverage >= 2) {
+    const promoted = contentLibrary
+      .filter(s => s.module === scenario.module && s.tier === scenario.tier + 1 &&
+        !state.progress.completedScenarioIds.includes(s.id))
+      .sort((a, b) => {
+        const aMatch = (a.competency_tags || []).some(tag => tags.includes(tag)) ? 0 : 1;
+        const bMatch = (b.competency_tags || []).some(tag => tags.includes(tag)) ? 0 : 1;
+        return aMatch - bMatch || a.id.localeCompare(b.id);
+      })[0];
+    return { action: "promote", next: promoted || null, coverage: tierCoverage };
+  }
   return { action: "continue", next: null };
 }
 
-function countItemTypeCoverage(moduleId, tier) {
-  const state = getState();
+export function countItemTypeCoverage(moduleId, tier, library, state = getState()) {
   const types = new Set();
   for (const id of state.progress.completedScenarioIds) {
-    // We don't have the scenario here; the caller can do exact coverage. Conservative: 0.
-    // Real coverage is computed by the path builder when it has the library.
+    const item = library.find(s => s.id === id);
+    if (item?.module === moduleId && item?.tier === tier) types.add(item.itemType);
   }
   return types.size;
 }
@@ -198,8 +219,7 @@ function countItemTypeCoverage(moduleId, tier) {
 
 export function checkBadges(state, library) {
   const earned = [];
-  // Signal Spotter — at MVP, 1 correct rule-bearing scenario unlocks the badge.
-  // (When more content arrives the rule will tighten to 5 true positives + 5 true negatives.)
+  // Signal Spotter — evidence across true-signal and correct non-call scenarios.
   let truePos = 0, trueNeg = 0;
   for (const id of state.progress.completedScenarioIds) {
     const s = library.find(x => x.id === id); if (!s) continue;
@@ -207,28 +227,28 @@ export function checkBadges(state, library) {
       if (s.runChartRule) truePos++; else trueNeg++;
     }
   }
-  if (truePos >= 1) earned.push("signal_spotter");
+  if (truePos >= 3 && trueNeg >= 2) earned.push("signal_spotter");
 
-  // Operational Definition — 3 BUILD scenarios in Module A solved.
+  // Operational Definition — both constrained construction and free-writing evidence.
   const opDefs = state.progress.completedScenarioIds.filter(id => id.startsWith("A2-opdef")).length;
-  if (opDefs >= 3) earned.push("operational_definition");
+  if (opDefs >= 2) earned.push("operational_definition");
 
-  // Family of Measures — 3 BUILD/MATCH scenarios in Module B solved.
-  const fom = state.progress.completedScenarioIds.filter(id => id.startsWith("B1-fom") || id.startsWith("B2-fom")).length;
-  if (fom >= 3) earned.push("family_of_measures");
+  // Family of Measures — classification plus applied family-of-measures evidence.
+  const fom = state.progress.completedScenarioIds.filter(id => id === "B1-measure-classification" || id.startsWith("B2-fom")).length;
+  if (fom >= 2) earned.push("family_of_measures");
 
-  // Board-Ready — Module F "target line" scenario solved.
-  if (state.progress.completedScenarioIds.includes("F2-target-line")) earned.push("board_ready");
+  // Board-Ready — two distinct board-facing judgements.
+  if (["F2-target-line", "F2-frame-collision"].every(id => state.progress.completedScenarioIds.includes(id))) earned.push("board_ready");
 
-  // Equity Lens — Module G scenario solved.
-  if (state.progress.completedScenarioIds.some(id => id.startsWith("G1"))) earned.push("equity_lens");
+  // Equity Lens — reserved for two pieces of evidence (the library is expanded in v2).
+  if (state.progress.completedScenarioIds.filter(id => id.startsWith("G1") || id.startsWith("G2")).length >= 2) earned.push("equity_lens");
 
   // Reflective Practitioner — 3 reflections of ≥ 20 chars.
   const reflections = Object.values(state.progress.answers).filter(a => a.reflection && a.reflection.length >= 20).length;
   if (reflections >= 3) earned.push("reflective_practitioner");
 
-  // Curriculum Connoisseur — at least 1 scenario solved in each of the 6 MVP modules.
-  const mvpModules = new Set(["A","B","C","F","G","H"]);
+  // Curriculum Connoisseur — at least 1 scenario solved in all eight modules.
+  const mvpModules = new Set(["A","B","C","D","E","F","G","H"]);
   const playedModules = new Set();
   for (const id of state.progress.completedScenarioIds) {
     const s = library.find(x => x.id === id); if (s) playedModules.add(s.module);

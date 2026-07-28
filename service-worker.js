@@ -1,6 +1,6 @@
 // Quality Quest — service worker (precache app shell + content for offline use).
 
-const VERSION = "qq-v1-2026-05-20";
+const VERSION = "qq-v2-2026-07-28";
 
 const APP_SHELL = [
   "./",
@@ -12,6 +12,7 @@ const APP_SHELL = [
   "./src/state.js",
   "./src/engine.js",
   "./src/content.js",
+  "./src/terminology.js",
   "./src/charts.js",
   "./src/ui/dom.js",
   "./src/ui/splash.js",
@@ -19,6 +20,8 @@ const APP_SHELL = [
   "./src/ui/scenario.js",
   "./src/ui/debrief.js",
   "./src/ui/path.js",
+  "./src/ui/map.js",
+  "./src/ui/profile.js",
   "./src/ui/caseFile.js",
   "./src/ui/install.js",
   "./assets/icons/icon.svg",
@@ -70,7 +73,7 @@ self.addEventListener("fetch", (event) => {
     }
     try {
       const res = await fetch(req);
-      if (res.ok) cache.put(req, res.clone());
+      if (isCacheable(res, req)) cache.put(req, res.clone());
       return res;
     } catch {
       // Offline + nothing cached — try index for nav requests.
@@ -83,6 +86,15 @@ self.addEventListener("fetch", (event) => {
 async function refresh(cache, req) {
   try {
     const fresh = await fetch(req);
-    if (fresh.ok) await cache.put(req, fresh);
+    if (isCacheable(fresh, req)) await cache.put(req, fresh);
   } catch { /* still offline; cache stays */ }
+}
+
+function isCacheable(response, request) {
+  if (!response.ok || response.redirected || response.type === "opaqueredirect") return false;
+  try {
+    return new URL(response.url).origin === new URL(request.url).origin;
+  } catch {
+    return false;
+  }
 }

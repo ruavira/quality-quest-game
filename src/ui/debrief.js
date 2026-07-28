@@ -1,6 +1,9 @@
 import { h } from "./dom.js";
+import { localizeValue } from "../terminology.js";
+import { textToHtml } from "./scenario.js";
 
-export function renderDebrief({ scenario, result, onNext, onReflect, isLast }) {
+export function renderDebrief({ scenario, profile, result, recommendation, onNext, onReflect, isLast }) {
+  scenario = localizeValue(scenario, profile);
   const correct = result.correct;
 
   // WRITE scenario: derive a header that names the rubric score
@@ -11,7 +14,10 @@ export function renderDebrief({ scenario, result, onNext, onReflect, isLast }) {
 
   const block = h("div", { class: "debrief-block " + (correct ? "is-correct" : "is-incorrect") },
     h("h3", {}, heading),
-    h("p", { html: scenario.debrief?.[correct ? "correct" : "wrong"] || "" }),
+    h("div", {
+      class: "debrief-copy",
+      html: textToHtml(scenario.debrief?.[correct ? "correct" : "wrong"] || "", profile),
+    }),
   );
   if (scenario.debrief?.rule_cited) {
     block.append(h("p", { style: { fontWeight: 600 } }, "Rule applied: ", scenario.debrief.rule_cited));
@@ -19,6 +25,13 @@ export function renderDebrief({ scenario, result, onNext, onReflect, isLast }) {
   if (scenario.debrief?.citations) {
     block.append(h("p", { class: "citation" },
       "Sources: " + scenario.debrief.citations.join(" · ")));
+  }
+  if (recommendation?.action === "remediate") {
+    block.append(h("p", { class: "pacing-note" },
+      "Next, you’ll see a different example of this skill so you can practise the idea without repeating the same exercise."));
+  } else if (recommendation?.action === "promote") {
+    block.append(h("p", { class: "pacing-note" },
+      "You’ve demonstrated this tier across more than one question type. The next example steps up the challenge."));
   }
 
   // Optional 1-sentence reflection (Reflective Practitioner badge target)

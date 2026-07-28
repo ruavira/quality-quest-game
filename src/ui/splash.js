@@ -7,7 +7,7 @@ export function renderSplash({ onStart, onContinue, hasProfile }) {
     h("p", {},
       "A short, offline-capable learning game for healthcare quality and patient safety professionals — built around the use of data for improvement."),
     h("p", {},
-      "Tell us a little about your work and we’ll set up your first few scenarios. No login. No data leaves this device."),
+      "Tell us a little about your work and we’ll set up your first few scenarios. Gameplay progress stays on this device; this pilot’s hosting may require an authorized email for first access."),
     h("div", { style: { display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "16px" } },
       hasProfile
         ? h("button", { class: "btn btn-primary", onclick: onContinue }, "Continue")

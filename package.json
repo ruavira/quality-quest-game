@@ -1,6 +1,6 @@
 {
   "name": "quality-quest",
-  "version": "0.1.0-mvp",
+  "version": "2.0.0",
   "private": true,
   "description": "Quality Quest — offline-capable HTML learning game for healthcare quality and patient safety professionals.",
   "license": "MIT",
@@ -8,7 +8,9 @@
   "scripts": {
     "dev":   "npx --yes serve -p 5174 .",
     "serve": "npx --yes serve -p 5174 .",
-    "lint:scenarios": "node -e \"const fs=require('fs'),p=require('path');const dir=p.join(__dirname,'content','scenarios');const m=JSON.parse(fs.readFileSync(p.join(dir,'manifest.json'),'utf8'));let bad=0;for(const f of m.files){try{const s=JSON.parse(fs.readFileSync(p.join(dir,f),'utf8'));if(!s.id||!s.module||!s.tier||!s.lo_id||!s.itemType){console.error('schema fail',f);bad++}}catch(e){console.error('parse fail',f,e.message);bad++}}console.log(bad===0?'OK — '+m.files.length+' scenarios valid':'FAIL — '+bad+' scenario(s) bad');process.exit(bad>0?1:0)\""
+    "lint:scenarios": "node scripts/validate-content.mjs",
+    "test": "node --test",
+    "check": "npm run lint:scenarios && npm test && find src scripts tests -name '*.js' -o -name '*.mjs' | xargs -n1 node --check"
   },
   "engines": {
     "node": ">=18"

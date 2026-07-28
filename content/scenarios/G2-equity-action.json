@@ -1,0 +1,45 @@
+{
+  "id": "G2-equity-action",
+  "module": "G",
+  "tier": 2,
+  "lo_id": "G.2.1",
+  "itemType": "DEFEND",
+  "chartType": "bar",
+  "competency_tags": ["equity_stratification", "equity_action"],
+  "setting_variant": "lower_resource",
+  "title": "Turn an equity gap into a testable action",
+  "brief": "Follow-up after hypertension referral is high near the district centre and much lower in remote catchment areas. The {{exec2}} wants one practical next step.",
+  "exhibit": {
+    "chartType": "bar",
+    "title": "Referral follow-up completed within 30 days",
+    "items": [
+      { "label": "District centre", "value": 84 },
+      { "label": "Peri-urban", "value": 72 },
+      { "label": "Remote north", "value": 41 },
+      { "label": "Remote river", "value": 38 }
+    ]
+  },
+  "task": {
+    "stem": "Which action should you recommend first?",
+    "options": [
+      { "label": "Test transport-linked appointment days in one remote catchment and measure completion plus missed visits." },
+      { "label": "Publish the district average and avoid subgroup targets." },
+      { "label": "Move all appointments to the district centre." }
+    ],
+    "reasonStem": "Why is that the strongest first step?",
+    "reasons": [
+      { "label": "It targets the observed access mechanism, starts small, and includes outcome and balancing evidence." },
+      { "label": "Every geographic gap is caused only by transport." },
+      { "label": "Equity work does not need measurement after implementation." }
+    ]
+  },
+  "answer": { "correctIndex": 0, "correctReasonIndex": 0 },
+  "debrief": {
+    "correct": "Correct. The test is targeted, small enough to learn from, and measures both follow-up and unintended burden.",
+    "wrong": "A useful equity response connects the observed gap to a plausible access mechanism, tests one change, and measures whether the gap improves without creating new burden.",
+    "rule_cited": "Equity-stratified improvement — act on a plausible mechanism and measure the result.",
+    "citations": ["who_nqps", "ihi_qi_103"]
+  },
+  "authors": ["Quality Quest v2"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

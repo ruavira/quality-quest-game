@@ -1,0 +1,40 @@
+{
+  "id": "C2-fishbone-system",
+  "module": "C",
+  "tier": 2,
+  "lo_id": "C.2.4",
+  "itemType": "MCQ",
+  "chartType": "fishbone",
+  "competency_tags": ["systems_thinking", "cause_analysis"],
+  "setting_variant": "any",
+  "title": "Read the whole fishbone",
+  "brief": "A ward team is reviewing repeated delays in giving the first antibiotic dose for suspected sepsis. The fishbone groups possible contributors instead of blaming the last person in the chain.",
+  "exhibit": {
+    "chartType": "fishbone",
+    "title": "Possible causes of delayed first antibiotic dose",
+    "categories": [
+      { "label": "People", "causes": ["New staff unfamiliar with protocol", "Escalation roles unclear"] },
+      { "label": "Process", "causes": ["No standard sepsis pathway", "Order requires duplicate entry"] },
+      { "label": "Equipment and supplies", "causes": ["Antibiotic stock kept off ward", "Only one functioning thermometer"] },
+      { "label": "Environment", "causes": ["Night laboratory turnaround", "Crowded triage area"] }
+    ]
+  },
+  "task": {
+    "stem": "What is the best next use of this fishbone?",
+    "options": [
+      { "label": "Choose the person named most often and retrain them." },
+      { "label": "Verify the leading hypotheses with observations and data before selecting changes." },
+      { "label": "Treat every listed cause as proven and launch all changes at once." },
+      { "label": "Calculate a control limit for each branch." }
+    ]
+  },
+  "answer": { "correctIndex": 1 },
+  "debrief": {
+    "correct": "Correct. A fishbone organizes hypotheses; it does not prove causation. Verify the strongest process and system hypotheses before choosing a focused test of change.",
+    "wrong": "The branches contain hypotheses, not verdicts. Use observation, record review, and small tests to learn which contributors actually drive the delay.",
+    "rule_cited": "Systems-based cause analysis — hypotheses require verification before action.",
+    "citations": ["npsf_rca2", "who_ps_curriculum"]
+  },
+  "authors": ["Quality Quest v2"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

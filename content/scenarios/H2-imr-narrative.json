@@ -1,0 +1,44 @@
+{
+  "id": "H2-imr-narrative",
+  "module": "H",
+  "tier": 2,
+  "lo_id": "H.2.2",
+  "itemType": "DEFEND",
+  "chartType": "iMR",
+  "competency_tags": ["chart_interpretation", "board_communication"],
+  "setting_variant": "any",
+  "title": "Tell the I-chart story honestly",
+  "brief": "The {{exec}} asks whether a single unusually long discharge time proves that the entire process has deteriorated. Use the I-chart to answer and defend the recommendation.",
+  "exhibit": {
+    "chartType": "iMR",
+    "title": "Weekly median discharge time in hours",
+    "data": [
+      { "x": "W1", "y": 4.8 }, { "x": "W2", "y": 5.1 }, { "x": "W3", "y": 4.7 },
+      { "x": "W4", "y": 5.0 }, { "x": "W5", "y": 4.9 }, { "x": "W6", "y": 8.6 },
+      { "x": "W7", "y": 5.2 }, { "x": "W8", "y": 4.8 }
+    ]
+  },
+  "task": {
+    "stem": "What should you advise?",
+    "options": [
+      { "label": "Investigate W6 as a possible special cause without claiming the whole process shifted." },
+      { "label": "Announce that the process average has permanently worsened." },
+      { "label": "Ignore W6 because one point can never matter." }
+    ],
+    "reasonStem": "Why?",
+    "reasons": [
+      { "label": "A point beyond the limits merits investigation, while the surrounding series does not show a sustained shift." },
+      { "label": "The target line is the same as a control limit." },
+      { "label": "Only monthly data can show special causes." }
+    ]
+  },
+  "answer": { "correctIndex": 0, "correctReasonIndex": 0 },
+  "debrief": {
+    "correct": "Correct. Investigate the exceptional week, describe it as a possible special cause, and avoid overstating a permanent system change.",
+    "wrong": "One exceptional point can deserve investigation without supporting a claim that the whole process permanently shifted.",
+    "rule_cited": "Control-chart interpretation — distinguish an isolated special cause from a sustained change.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest v2"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

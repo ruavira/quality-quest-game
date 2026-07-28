@@ -51,6 +51,9 @@
     "A2-shift-direction.json",
     "A2-enough-data.json",
     "A2-runs-rule.json",
-    "A1-median-on-line.json"
+    "A1-median-on-line.json",
+    "C2-fishbone-system.json",
+    "H2-imr-narrative.json",
+    "G2-equity-action.json"
   ]
 }
