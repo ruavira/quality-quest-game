@@ -8,9 +8,10 @@
   "scripts": {
     "dev":   "npx --yes serve -p 5174 .",
     "serve": "npx --yes serve -p 5174 .",
+    "build:content": "node scripts/build-content.mjs",
     "lint:scenarios": "node scripts/validate-content.mjs",
     "test": "node --test",
-    "check": "npm run lint:scenarios && npm test && find src scripts tests -name '*.js' -o -name '*.mjs' | xargs -n1 node --check"
+    "check": "npm run build:content && npm run lint:scenarios && npm test && find src scripts tests -name '*.js' -o -name '*.mjs' | xargs -n1 node --check"
   },
   "engines": {
     "node": ">=18"

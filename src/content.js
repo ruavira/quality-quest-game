@@ -12,28 +12,16 @@ export async function loadContent() {
   if (cache) return cache;
 
   // Scenarios are listed in a manifest so the service worker can precache them.
-  const [modules, glossary, citations, manifest] = await Promise.all([
+  const [modules, glossary, citations, scenarios] = await Promise.all([
     fetchJson(`${CONTENT_BASE}/modules.json`),
     fetchJson(`${CONTENT_BASE}/glossary.json`),
     fetchJson(`${CONTENT_BASE}/citations.json`),
-    fetchJson(`${CONTENT_BASE}/scenarios/manifest.json`),
+    fetchJson(`${CONTENT_BASE}/scenarios/bundle.json`),
   ]);
 
-  // The production library contains dozens of small JSON files. Loading them
-  // serially multiplies network latency, while requesting all of them at once
-  // can overwhelm a low-bandwidth connection. A small worker pool keeps startup
-  // quick without creating an uncontrolled request burst.
-  const scenarios = (await mapConcurrent(manifest.files, 8, async (file) => {
-    try {
-      const scenario = await fetchJson(`${CONTENT_BASE}/scenarios/${file}`);
-      return validateScenario(scenario) ? scenario : null;
-    } catch (error) {
-      console.warn(`[content] failed to load ${file}`, error);
-      return null;
-    }
-  })).filter(Boolean);
+  const validScenarios = scenarios.filter(validateScenario);
 
-  cache = { modules, scenarios, glossary, citations };
+  cache = { modules, scenarios: validScenarios, glossary, citations };
   return cache;
 }
 
@@ -41,19 +29,6 @@ async function fetchJson(url) {
   const res = await fetch(url, { cache: "force-cache" });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return res.json();
-}
-
-async function mapConcurrent(items, limit, work) {
-  const results = new Array(items.length);
-  let cursor = 0;
-  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
-    while (cursor < items.length) {
-      const index = cursor++;
-      results[index] = await work(items[index], index);
-    }
-  });
-  await Promise.all(workers);
-  return results;
 }
 
 function validateScenario(s) {

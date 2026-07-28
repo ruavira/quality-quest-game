@@ -31,21 +31,15 @@ const APP_SHELL = [
   "./content/glossary.json",
   "./content/citations.json",
   "./content/scenarios/manifest.json",
+  "./content/scenarios/bundle.json",
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(VERSION);
-    // Cache app shell, plus all scenarios listed in the manifest if reachable.
+    // The production scenario bundle is part of the shell. Individual source
+    // files remain in the repository for authoring but are not needed at runtime.
     await cache.addAll(APP_SHELL);
-    try {
-      const manifestRes = await fetch("./content/scenarios/manifest.json", { cache: "no-cache" });
-      if (manifestRes.ok) {
-        const data = await manifestRes.json();
-        const urls = (data.files || []).map(f => `./content/scenarios/${f}`);
-        await cache.addAll(urls);
-      }
-    } catch { /* offline first-install — files will be cached on later fetch */ }
     self.skipWaiting();
   })());
 });
