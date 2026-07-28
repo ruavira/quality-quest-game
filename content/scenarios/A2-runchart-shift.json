@@ -1,0 +1,44 @@
+{
+  "id": "A2-runchart-shift",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.1",
+  "itemType": "HOT",
+  "chartType": "run",
+  "runChartRule": "shift",
+  "competency_tags": ["run_chart_rules", "signal_vs_noise"],
+  "setting_variant": "lower_resource",
+  "title": "Find the shift signal",
+  "brief": "Your QI team has been working since March on improving the proportion of children under five with a malaria-positive RDT who are dispensed an artemisinin-based combination therapy (ACT) **on the same day** at a rural health centre. The chart below shows the last 20 weeks of weekly data.\n\nUsing Provost & Murray’s **shift rule** — six or more consecutive points on one side of the median signal a non-random change — click the points that make up the shift.\n\n(Tip: keyboard users can press Tab to enter the chart, then Left/Right arrow to move between points, and Enter to select.)",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "Same-day ACT dispensing for malaria-positive children U5 (weekly)",
+    "xLabel": "Week",
+    "yLabel": "Same-day ACT %",
+    "data": [
+      { "x": "W1",  "y": 62 }, { "x": "W2",  "y": 58 }, { "x": "W3",  "y": 64 },
+      { "x": "W4",  "y": 60 }, { "x": "W5",  "y": 65 }, { "x": "W6",  "y": 61 },
+      { "x": "W7",  "y": 63 }, { "x": "W8",  "y": 59 },
+      { "x": "W9",  "y": 72 }, { "x": "W10", "y": 74 }, { "x": "W11", "y": 71 },
+      { "x": "W12", "y": 75 }, { "x": "W13", "y": 73 }, { "x": "W14", "y": 76 },
+      { "x": "W15", "y": 70 }, { "x": "W16", "y": 65 }, { "x": "W17", "y": 68 },
+      { "x": "W18", "y": 66 }, { "x": "W19", "y": 63 }, { "x": "W20", "y": 67 }
+    ],
+    "median": 65
+  },
+  "task": {
+    "stem": "Click each point that is part of the shift (the run of consecutive points entirely on one side of the median). Submit when you have the full shift selected."
+  },
+  "answer": {
+    "indices": [8, 9, 10, 11, 12, 13, 14]
+  },
+  "debrief": {
+    "correct": "Spotted. Weeks 9–15 are all above the median (65%) — that is **seven** consecutive points above, which exceeds the threshold of six for the shift rule. The drop after week 15 is back into routine variation. A shift is one of the four classic run-chart signals; the others are trend, runs (too many / too few crossings of the median), and astronomical point.",
+    "wrong": "The shift rule: **six or more consecutive points entirely on one side of the median** (points on the median do not count). Look for the run starting around week 9 — seven points are above the median (65%) before the chart drops back. The eye is often drawn to the peak (week 14, 76%), but the signal is the sustained run, not the maximum.",
+    "rule_cited": "Provost & Murray (2nd ed.) — Shift rule (≥ 6 consecutive points on one side of the median).",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

@@ -1,0 +1,87 @@
+/* Quality Quest — design tokens (system-font only at MVP per LMIC addendum H) */
+
+:root {
+  /* Palette — clinical teal-leaning, Okabe-Ito derived where chart series colours are used. */
+  --ink-900: #0B1F33;
+  --ink-700: #1F3A57;
+  --ink-500: #4F5B6B;
+  --ink-300: #94A2B3;
+  --ink-100: #E6ECF2;
+  --paper-50: #F7F9FC;
+  --paper-0: #FFFFFF;
+
+  --brand-600: #0A6E8F;
+  --brand-500: #1796B8;
+  --brand-100: #D6EEF5;
+
+  /* Status colours re-picked against --paper-50 for WCAG AA (CON colour-contrast fix). */
+  --success-700: #0F6E47;
+  --success-100: #D7EFE2;
+  --warn-700:    #8A5300;
+  --warn-100:    #FBE9C9;
+  --danger-700:  #9A1F1F;
+  --danger-100:  #F5D6D6;
+
+  /* Okabe-Ito categorical series for charts (with pattern fills required too). */
+  --series-1: #0072B2;
+  --series-2: #E69F00;
+  --series-3: #009E73;
+  --series-4: #CC79A7;
+  --series-5: #56B4E9;
+  --series-6: #D55E00;
+  --series-neutral: #4F5B6B;
+
+  /* Type scale — root 16px for low-DPI reserve. System stack only. */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+               "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-serif: ui-serif, Georgia, "Times New Roman", "Noto Serif", serif;
+  --font-mono: ui-monospace, SFMono-Regular, "Cascadia Mono", Menlo, Consolas, monospace;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+
+  --lh-tight: 1.25;
+  --lh-snug: 1.4;
+  --lh-normal: 1.55;
+
+  /* Space scale */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  /* Radius */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(11, 31, 51, 0.06);
+  --shadow-md: 0 4px 12px rgba(11, 31, 51, 0.08);
+  --shadow-lg: 0 12px 32px rgba(11, 31, 51, 0.10);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-base: 0ms; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme intentionally not shipped at MVP — flagged for v1.0. */
+  }
+}

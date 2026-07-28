@@ -1,0 +1,45 @@
+{
+  "id": "E1-cohsasa-prep",
+  "module": "E",
+  "tier": 1,
+  "lo_id": "E.1.3",
+  "accrediting_body": "COHSASA",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["accreditation", "data-completeness", "self-assessment", "corrective-action", "COHSASA"],
+  "setting_variant": "lower_resource",
+  "title": "COHSASA Survey Prep: Closing the Data Gap",
+  "brief": "A hospital in Lusaka, Zambia is three months away from its Council for Health Service Accreditation of Southern Africa (COHSASA) survey. COHSASA standards require 12 months of data for six core indicators. The hospital has complete 12-month data for four indicators, but only three months of data for two: the maternal mortality ratio and the nosocomial (hospital-acquired) infection rate.",
+  "task": {
+    "stem": "Which action best addresses the data gap before the survey?",
+    "options": [
+      {
+        "label": "Begin prospective data collection immediately for the two incomplete indicators, document the gap transparently in the self-assessment with a clear explanation, and attach a corrective action plan with a realistic timeline."
+      },
+      {
+        "label": "Use the three months of available data to calculate an estimate for the missing nine months and submit those estimated values alongside the complete indicators."
+      },
+      {
+        "label": "Wait and see — the surveyor may not ask about those two indicators during the visit."
+      },
+      {
+        "label": "Submit only the four complete indicators and say nothing about the other two in the self-assessment report."
+      }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Starting data collection immediately gives the hospital three months of real data before the survey. Transparent disclosure in the self-assessment, supported by a corrective action plan, shows COHSASA surveyors that the facility recognises the gap and is actively addressing it. Honesty with a credible plan is always preferred over silence or false data. COHSASA is one of a small group of African accreditation bodies whose standards are accredited by ISQua-IEEA, meaning its requirements reflect international best practice.",
+    "wrong": "Estimating or extrapolating values for missing months is a form of data fabrication, which can result in disqualification from accreditation and loss of trust. Hoping the surveyor will not ask about required indicators is not a safe strategy — COHSASA surveyors check all six core indicators as a mandatory part of the survey process. Submitting only the complete indicators without explaining the gap is treated as an incomplete and potentially misleading submission, which surveyors will flag as a finding; concealment is worse than transparent disclosure.",
+    "rule_cited": "COHSASA standards require 12 months of complete data for all designated core indicators; gaps must be disclosed in the self-assessment with a corrective action plan.",
+    "citations": ["cohsasa", "isqua_ieea"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": {
+    "clinical": null,
+    "statistical": null,
+    "instructional": null,
+    "plain_language": null,
+    "context_review_pending": true
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "A2-chart-type-choice",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.2",
+  "itemType": "DEFEND",
+  "chartType": "none",
+  "competency_tags": ["chart_selection", "data_structure"],
+  "setting_variant": "any",
+  "title": "Pick the right chart — and defend it",
+  "brief": "You are asked to chart the **proportion of post-partum mothers screened for depression before discharge**, monthly for 18 months, in a hospital where the **number of post-partum discharges varies each month** (anywhere from 80 to 250).\n\nYou have enough baseline data and the process appears stable. Choose the right control chart, then say why.",
+  "task": {
+    "stem": "Which chart type is the right choice here?",
+    "options": [
+      { "label": "Run chart (median line; no control limits)" },
+      { "label": "p-chart" },
+      { "label": "u-chart" },
+      { "label": "I-MR chart" }
+    ],
+    "reasonStem": "Why that chart? Pick the best reason.",
+    "reasons": [
+      { "label": "Because the underlying data are continuous values on a numeric scale." },
+      { "label": "Because each patient is classified yes/no and the subgroup size (denominator) varies each month, so the control limits must vary with subgroup size." },
+      { "label": "Because we are counting events in an area of opportunity and the area is constant." },
+      { "label": "Because run charts work for everything and are simpler to read." }
+    ]
+  },
+  "answer": {
+    "correctIndex": 1,
+    "correctReasonIndex": 1
+  },
+  "debrief": {
+    "correct": "Right. The data are classifications (each mother is screened, yes/no), and the subgroup size (monthly discharges) varies — that is exactly when you reach for a **p-chart**, where the control limits **vary with the denominator** in each subgroup. A run chart could be used too, but with stable baseline and enough data, p-chart gives you control limits and signal rules a run chart cannot. A u-chart is for **count** data in an area of opportunity; I-MR is for **continuous individual values**.",
+    "wrong": "Two clues drive the choice: (1) the data are classifications (yes/no per patient) → that points at a **p-chart**, not a u-chart (which is for counts) or an I-MR (which is for continuous). (2) The subgroup size varies — so the p-chart’s control limits must also vary subgroup-by-subgroup. A run chart would work but doesn’t give you control limits.",
+    "rule_cited": "Chart selection by data structure — Provost & Murray ch. 5–6.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "D2-audit-interpret",
+  "module": "D",
+  "tier": 2,
+  "lo_id": "D.2.2",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["audit_interpretation", "improvement_action"],
+  "setting_variant": "lower_resource",
+  "title": "Interpret an audit report finding",
+  "brief": "A district hospital ran a monthly clinical audit on postnatal care documentation. The measure: **proportion of postnatal women with a completed postnatal check recorded within 6 hours of delivery.** The audit covered 40 records over 4 weeks.\n\n| Week | Records audited | Criterion met | Rate |\n|---|---|---|---|\n| Week 1 | 10 | 4 | 40% |\n| Week 2 | 10 | 6 | 60% |\n| Week 3 | 10 | 3 | 30% |\n| Week 4 | 10 | 5 | 50% |\n\n**Overall: 18 of 40 = 45%.** The hospital target is 90%.",
+  "task": {
+    "stem": "Which interpretation and next action is most appropriate?",
+    "options": [
+      { "label": "The 45% overall rate is well below the 90% target, but the variation across weeks (30–60%) suggests the problem is inconsistent — not a uniform failure. The priority action is to investigate the process: when and why do checks get missed, and is it the same staff, shift, or day of the week each time?" },
+      { "label": "The audit shows the hospital is improving: 40% in Week 1, 50% in Week 4. Continue monitoring and the target will be reached in time." },
+      { "label": "The overall rate is 45%, which is too low. The correct response is to set a higher target — 95% — to motivate the team." },
+      { "label": "Four weeks is too short to draw any conclusion. Repeat the audit for 3 months before taking any action." }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Correct. The 45% rate is a significant gap from 90%, and the week-to-week variation (30%–60%) is the key signal — it tells you the system is inconsistent, not uniformly failing. That inconsistency is a diagnostic clue: something is different on some days or shifts. Investigating *when* and *why* failures cluster is the right first step before designing an intervention. A run chart over more weeks would reveal whether the variation is random or patterned.",
+    "wrong": "Option B misreads the data as a trend: Week 1 = 40%, Week 4 = 50% — but Weeks 2 and 3 go up then down. There is no consistent upward trend; that is common-cause variation. Option C confuses motivation with system design — raising a target never fixes a process. Option D delays action unnecessarily; 40 records is enough to identify a serious gap and begin investigation, even if more data will sharpen the picture.",
+    "rule_cited": "Audit interpretation — common-cause vs assignable-cause variation. Provost & Murray ch. 3; IHI QI 104.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104", "who_nqps"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

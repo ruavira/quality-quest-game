@@ -1,0 +1,39 @@
+{
+  "id": "C1-harm-severity",
+  "module": "C",
+  "tier": 1,
+  "lo_id": "C.1.1",
+  "itemType": "MATCH",
+  "chartType": "none",
+  "competency_tags": ["incident_classification", "icps_severity"],
+  "setting_variant": "any",
+  "title": "Classify the harm",
+  "brief": "Your safety officer asks you to triage four incident reports from the past week. Use the World Health Organization International Classification for Patient Safety (ICPS) harm-severity categories: **None, Mild, Moderate, Severe, Death**.\n\nIn the ICPS framing, the patient outcome is the anchor, not the *type* of event.",
+  "task": {
+    "stem": "Match each incident to the most appropriate ICPS harm category.",
+    "items": [
+      { "id": "i1", "label": "Wrong-dose paracetamol prescribed; pharmacist caught the error before dispensing; patient never received the wrong dose." },
+      { "id": "i2", "label": "Patient received an antibiotic to which they had a documented allergy; developed a mild rash that resolved with antihistamines; no hospital stay required." },
+      { "id": "i3", "label": "Post-operative haemorrhage requiring return to theatre and three-day ICU admission; patient recovered fully." },
+      { "id": "i4", "label": "Maternal death from post-partum haemorrhage after delayed identification of bleeding." }
+    ],
+    "categories": [
+      { "id": "none",     "label": "None" },
+      { "id": "mild",     "label": "Mild" },
+      { "id": "moderate", "label": "Moderate" },
+      { "id": "severe",   "label": "Severe" },
+      { "id": "death",    "label": "Death" }
+    ]
+  },
+  "answer": {
+    "pairs": { "i1": "none", "i2": "mild", "i3": "severe", "i4": "death" }
+  },
+  "debrief": {
+    "correct": "Good. In ICPS, severity is anchored on the **patient outcome**. A near-miss caught before reaching the patient is ‘None’. A transient symptom managed without significant intervention is ‘Mild’. Events requiring intervention to sustain life or extended hospitalisation are ‘Severe’. The category does not depend on the type of event or whether the cause was avoidable.",
+    "wrong": "In ICPS, severity follows the patient outcome — not the type of event. A near-miss is ‘None’ regardless of how dangerous the drug was. An intervention to sustain life is ‘Severe’ even when recovery is full.",
+    "rule_cited": "WHO ICPS harm severity categories.",
+    "citations": ["who_icps", "who_ps_curriculum"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

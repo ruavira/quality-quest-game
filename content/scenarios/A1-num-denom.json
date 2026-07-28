@@ -1,0 +1,30 @@
+{
+  "id": "A1-num-denom",
+  "module": "A",
+  "tier": 1,
+  "lo_id": "A.1.2",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["operational_definitions", "numerator_denominator"],
+  "setting_variant": "any",
+  "title": "Find the numerator and denominator",
+  "brief": "A clinic in-charge reports their hand-hygiene measure as: **‘Proportion of clinical hand-hygiene moments where staff performed hand hygiene, observed during scheduled audit rounds in the outpatient department in May.’**\n\nA strong measure makes its numerator, denominator, and counting frame unambiguous. Spot the numerator below.",
+  "task": {
+    "stem": "Which is the numerator of this measure?",
+    "options": [
+      { "label": "The number of clinical hand-hygiene moments observed during scheduled audit rounds." },
+      { "label": "The number of observed moments where staff performed hand hygiene." },
+      { "label": "The proportion of correct hand-hygiene observations." },
+      { "label": "The total number of clinical staff working in the outpatient department in May." }
+    ]
+  },
+  "answer": { "correctIndex": 1 },
+  "debrief": {
+    "correct": "Correct. The **numerator** is the count of events that meet the measure: observed moments where hand hygiene was performed. The **denominator** is the total number of observed clinical hand-hygiene moments. The third option is the resulting proportion (the measure itself), and the fourth is irrelevant to the measure as written.",
+    "wrong": "Re-read the measure. The numerator is the count of the events meeting the criterion: ‘moments where staff performed hand hygiene’. The denominator is ‘all clinical hand-hygiene moments observed’. A clear operational definition makes these unambiguous.",
+    "rule_cited": "Operational definitions — IHI QI 102 / Provost & Murray ch. 3.",
+    "citations": ["ihi_qi_102", "provost_murray_2nd", "nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

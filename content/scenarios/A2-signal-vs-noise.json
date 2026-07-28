@@ -1,0 +1,55 @@
+{
+  "id": "A2-signal-vs-noise",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.5",
+  "itemType": "DEFEND",
+  "chartType": "run",
+  "competency_tags": ["signal_vs_noise", "run_chart_rules", "tampering"],
+  "setting_variant": "any",
+  "title": "Signal, or just noise?",
+  "brief": "Your medical ward tracks **inpatient falls per 1,000 bed-days**, monthly. This month's point ticked up to 2.0, and the {{exec}} has asked you to launch an emergency falls-prevention drive this week.\n\nBefore you act, apply the four run-chart signals to the last 14 months (median = 1.5). Then decide what to advise.\n\n(A signal is a pattern a rule detects: a shift of six or more consecutive points on one side of the median, a trend of five or more all rising or all falling, too few or too many runs, or one astronomical point obviously different from the rest.)",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "Inpatient falls per 1,000 bed-days (monthly)",
+    "xLabel": "Month",
+    "yLabel": "Falls per 1,000 bed-days",
+    "data": [
+      { "x": "M1",  "y": 1.4 }, { "x": "M2",  "y": 1.3 }, { "x": "M3",  "y": 1.6 },
+      { "x": "M4",  "y": 1.7 }, { "x": "M5",  "y": 1.4 }, { "x": "M6",  "y": 1.2 },
+      { "x": "M7",  "y": 1.6 }, { "x": "M8",  "y": 1.8 }, { "x": "M9",  "y": 1.6 },
+      { "x": "M10", "y": 1.3 }, { "x": "M11", "y": 1.4 }, { "x": "M12", "y": 1.7 },
+      { "x": "M13", "y": 1.2 }, { "x": "M14", "y": 2.0 }
+    ],
+    "median": 1.5
+  },
+  "task": {
+    "stem": "What do you advise the {{exec}}?",
+    "options": [
+      { "label": "Launch the emergency falls-prevention drive this week and set a stretch target, because the rate is climbing." },
+      { "label": "Hold: no run-chart rule has fired, so this is common-cause variation. Keep the current process and keep measuring." },
+      { "label": "Remove the 2.0 point as an outlier and recompute the median so the chart looks stable." },
+      { "label": "Declare the ward unsafe and escalate the single month to the board immediately." }
+    ],
+    "reasonStem": "Why?",
+    "reasons": [
+      { "label": "Because reacting to ordinary variation — tampering — adds new variation and can make the system worse; act only on a genuine signal, and one uptick is the two-point trap." },
+      { "label": "Because falls data is always noise and never worth acting on." },
+      { "label": "Because you need at least 24 data points before any run-chart rule can be applied." },
+      { "label": "Because the Medical Director's request outranks what the chart shows." }
+    ]
+  },
+  "answer": {
+    "correctIndex": 1,
+    "correctReasonIndex": 0
+  },
+  "debrief": {
+    "correct": "Exactly. Run the four rules and nothing fires: the points alternate around the median (no run of six — no **shift**), there is no run of five rising or falling (no **trend**), the number of runs is ordinary (no **runs** signal), and 2.0 is only about 1.3× the median with 1.8 close behind — not an **astronomical** point. So the uptick is **common-cause noise**. Acting on it is **tampering** — the single most common data mistake in QI — and it usually makes the next month worse while burning the team's trust. The disciplined answer is: note it, keep watching, change nothing yet. (Contrast this with a true astronomical point — say a jump to 5.3 after a power failure — which *would* warrant investigating the system.)",
+    "wrong": "The four signals are your bright lines. Here none of them fires: no six-in-a-row shift, no five-point trend, no runs signal, and 2.0 is not obviously different from the rest (1.8 is close, and it is only ~1.3× the median). A single worse month is the **two-point trap**. Reacting to noise is **tampering** — it injects fresh variation and exhausts staff. Only act when you can name the rule and the points that fired.",
+    "rule_cited": "Common- vs special-cause variation; the four run-chart signals; the tampering trap — Provost & Murray (2nd ed.), IHI QI 104.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

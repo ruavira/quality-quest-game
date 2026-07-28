@@ -1,0 +1,55 @@
+{
+  "id": "A2-shift-direction",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.9",
+  "itemType": "DEFEND",
+  "chartType": "run",
+  "runChartRule": "shift",
+  "competency_tags": ["run_chart_rules", "signal_vs_noise"],
+  "setting_variant": "any",
+  "title": "A signal in the wrong direction",
+  "brief": "This chart shows the monthly **catheter-associated urinary tract infection (CAUTI) rate** per 1,000 catheter-days (lower is better). The median is the dashed line.\n\nA colleague says: 'Six months in a row above the line — at least it's consistent.' Read the chart and decide what it really means.",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "CAUTI rate per 1,000 catheter-days — monthly",
+    "xLabel": "Month",
+    "yLabel": "CAUTI per 1,000 cath-days",
+    "data": [
+      { "x": "M1", "y": 1.8 }, { "x": "M2", "y": 2.2 }, { "x": "M3", "y": 1.9 }, { "x": "M4", "y": 2.4 },
+      { "x": "M5", "y": 2.0 }, { "x": "M6", "y": 2.3 }, { "x": "M7", "y": 1.9 }, { "x": "M8", "y": 2.1 },
+      { "x": "M9", "y": 3.6 }, { "x": "M10", "y": 4.0 }, { "x": "M11", "y": 3.8 }, { "x": "M12", "y": 4.2 },
+      { "x": "M13", "y": 3.9 }, { "x": "M14", "y": 4.3 }, { "x": "M15", "y": 3.7 }, { "x": "M16", "y": 4.1 }
+    ],
+    "median": 3.0
+  },
+  "task": {
+    "stem": "What does this pattern tell you?",
+    "options": [
+      { "label": "Good news — the rate is stable and consistent; no action needed." },
+      { "label": "A real signal in the undesirable direction — a sustained upward shift. Investigate what changed around M9 and act." },
+      { "label": "Just noise — every month varies; ignore it." },
+      { "label": "An improvement — six months in a row is a good run." }
+    ],
+    "reasonStem": "Why?",
+    "reasons": [
+      { "label": "A run of six or more points on one side of the median is a shift — and direction matters. Here the shift is upward on a 'lower-is-better' measure, so it demands investigation and action, not reassurance." },
+      { "label": "Any movement on a chart means the process is out of control and must be stopped." },
+      { "label": "An upward run is always a good sign." },
+      { "label": "You must always wait for at least 24 points before reading any signal." }
+    ]
+  },
+  "answer": {
+    "correctIndex": 1,
+    "correctReasonIndex": 0
+  },
+  "debrief": {
+    "correct": "Exactly. From M9, eight consecutive months sit **above** the median (3.0) — a clear **shift**. A shift is a real special-cause signal, but **direction matters**: on a lower-is-better measure like CAUTI, an upward shift is a deterioration, not a 'consistent' or 'good' run. The right move is to investigate what changed around M9 (a new catheter practice? a staffing change? a supply switch?) and act. Reading the direction wrong is how teams celebrate a signal that should alarm them.",
+    "wrong": "Two things to get right. First, this **is** a signal: eight months in a row above the median is a shift (six or more on one side). Second, and just as important, the **direction**: CAUTI is a lower-is-better measure, so an upward shift is a worsening. It is neither noise to ignore nor good news to celebrate — investigate what changed around M9 and act.",
+    "rule_cited": "Shift rule and the importance of direction — Provost & Murray (2nd ed.), IHI QI 104.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

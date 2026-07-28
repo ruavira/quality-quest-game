@@ -1,0 +1,42 @@
+{
+  "id": "A2-enough-data",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.10",
+  "itemType": "MCQ",
+  "chartType": "run",
+  "competency_tags": ["run_chart_rules", "signal_vs_noise"],
+  "setting_variant": "any",
+  "title": "Is this even enough data?",
+  "brief": "A team has plotted its first **six weeks** of theatre start-time delays (minutes) and is keen to declare that things are improving. The median is the dashed line.\n\nBefore reading any signal, ask the prior question: is there enough data?",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "Theatre start-time delay (minutes) — weekly",
+    "xLabel": "Week",
+    "yLabel": "Delay (min)",
+    "data": [
+      { "x": "W1", "y": 32 }, { "x": "W2", "y": 28 }, { "x": "W3", "y": 30 },
+      { "x": "W4", "y": 25 }, { "x": "W5", "y": 27 }, { "x": "W6", "y": 24 }
+    ],
+    "median": 27.5
+  },
+  "task": {
+    "stem": "Can you reliably apply the run-chart rules to this chart yet?",
+    "options": [
+      { "label": "Yes — six points is plenty to call a signal." },
+      { "label": "No — you generally need about 10–12 points or more before the rules are reliable; keep collecting." },
+      { "label": "Yes, but only the astronomical-point rule works with few points." },
+      { "label": "No — you need exactly 30 points before any run chart can be read." }
+    ]
+  },
+  "answer": { "correctIndex": 1 },
+  "debrief": {
+    "correct": "Right. With only six points, the run-chart rules are not yet reliable — you generally want **about 10–12 points or more** before a shift, trend, or runs signal means much. Six points can look like an improvement purely by chance. Keep collecting data on the same measure, keep the median provisional, and re-read the chart as it grows. Declaring victory now risks acting on noise.",
+    "wrong": "The run-chart rules need enough data to work: **roughly 10–12 points or more**. Six points is too few — a short downward wiggle can happen by chance and is not a signal. It is not that only one rule works, and there is no magic '30 points' threshold; you simply keep collecting until the chart is long enough to read.",
+    "rule_cited": "Minimum data for run-chart interpretation — Provost & Murray (2nd ed.); Perla, Provost & Murray on run-chart rules.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

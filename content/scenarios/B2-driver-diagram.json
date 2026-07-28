@@ -1,0 +1,46 @@
+{
+  "id": "B2-driver-diagram",
+  "module": "B",
+  "tier": 2,
+  "lo_id": "B.2.2",
+  "itemType": "MATCH",
+  "chartType": "none",
+  "competency_tags": ["driver_diagram", "change_ideas"],
+  "setting_variant": "lower_resource",
+  "title": "Build a driver diagram",
+  "brief": "Aim: **'Reduce the rate of surgical-site infections (SSI) at Abubakar District Hospital from 14% to below 4% within 9 months.'**\n\nThe improvement team has agreed on three primary drivers:\n- **Primary Driver 1 — Pre-operative preparation**\n- **Primary Driver 2 — Intraoperative sterile technique**\n- **Primary Driver 3 — Post-operative wound care**\n\nSix change ideas have been proposed. Place each idea under the primary driver it most directly addresses.",
+  "task": {
+    "stem": "Match each change idea to its primary driver.",
+    "items": [
+      { "id": "c1", "label": "Introduce a pre-operative chlorhexidine skin-scrub checklist for all elective surgical patients." },
+      { "id": "c2", "label": "Add a daily wound-inspection chart to each post-operative patient's bedside folder." },
+      { "id": "c3", "label": "Train scrub nurses to call a stop if sterility is broken during a procedure." },
+      { "id": "c4", "label": "Give patients an education card on wound warning signs before discharge." },
+      { "id": "c5", "label": "Create a standard procedure for giving prophylactic antibiotics before the incision." },
+      { "id": "c6", "label": "Introduce a double instrument count at the start and close of every operation." }
+    ],
+    "categories": [
+      { "id": "preop",   "label": "Primary Driver 1 — Pre-operative preparation" },
+      { "id": "intraop", "label": "Primary Driver 2 — Intraoperative sterile technique" },
+      { "id": "postop",  "label": "Primary Driver 3 — Post-operative wound care" }
+    ]
+  },
+  "answer": {
+    "pairs": {
+      "c1": "preop",
+      "c2": "postop",
+      "c3": "intraop",
+      "c4": "postop",
+      "c5": "preop",
+      "c6": "intraop"
+    }
+  },
+  "debrief": {
+    "correct": "Correct. In a driver diagram, change ideas sit directly below the primary driver they address — the upstream cause they act on. **Pre-operative ideas** (skin prep checklist, prophylactic antibiotic procedure) reduce the risk of contamination before the incision. **Intraoperative ideas** (sterility stop, instrument count) maintain a clean field during the operation itself. **Post-operative ideas** (wound chart, discharge education card) detect and contain problems after the wound is closed. Placing an idea under the wrong driver breaks the causal logic the diagram is designed to make visible — and can lead a team to test a change in the wrong phase of care.",
+    "wrong": "Ask: at what phase of care does this idea act? Pre-op ideas happen before the incision (skin prep, prophylactic antibiotics). Intraop ideas happen during the operation (sterility checks, instrument counts). Post-op ideas happen after wound closure (daily wound monitoring, patient education on warning signs). Match the idea to its phase, and you have matched it to its primary driver.",
+    "rule_cited": "Driver diagram — IHI Model for Improvement (QI 102); change package construction.",
+    "citations": ["ihi_qi_102", "ihi_qi_103"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

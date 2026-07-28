@@ -1,0 +1,37 @@
+{
+  "id": "F1-dashboard-measures",
+  "module": "F",
+  "tier": 1,
+  "lo_id": "F.1.1",
+  "itemType": "MATCH",
+  "chartType": "none",
+  "competency_tags": ["family_of_measures", "leadership_dashboard"],
+  "setting_variant": "any",
+  "title": "Read a leadership dashboard",
+  "brief": "The {{exec}}’s monthly {{board}} includes the following four measures. Before you respond to them in the meeting, classify each as outcome, process, or balancing — that determines what kind of action makes sense.",
+  "task": {
+    "stem": "Tag each dashboard measure.",
+    "items": [
+      { "id": "d1", "label": "30-day all-cause readmission rate." },
+      { "id": "d2", "label": "Proportion of discharges with a documented medication reconciliation." },
+      { "id": "d3", "label": "Average length of stay on the medical wards (in days)." },
+      { "id": "d4", "label": "Staff overtime hours per ward per month." }
+    ],
+    "categories": [
+      { "id": "outcome",   "label": "Outcome measure"   },
+      { "id": "process",   "label": "Process measure"   },
+      { "id": "balancing", "label": "Balancing measure" }
+    ]
+  },
+  "answer": {
+    "pairs": { "d1": "outcome", "d2": "process", "d3": "outcome", "d4": "balancing" }
+  },
+  "debrief": {
+    "correct": "Good. Outcomes describe how the system is performing for patients (readmissions, length of stay). Process measures track whether the care steps that drive outcomes are actually happening (medication reconciliation). Balancing measures watch for unintended harm from a focused initiative — here, that staff overtime might rise if you push wards to discharge faster.",
+    "wrong": "The {{board}} usually contains a mix of measure types. Re-tag: readmissions and length-of-stay are outcomes (what happened to patients). Medication reconciliation is a process measure (did the step happen?). Overtime hours is a balancing measure (what else might worsen as we push other measures?).",
+    "rule_cited": "Family of measures applied to leadership dashboards — IHI QI 102, NAHQ Quality Leadership & Integration domain.",
+    "citations": ["ihi_qi_102", "nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

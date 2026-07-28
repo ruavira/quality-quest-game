@@ -1,0 +1,45 @@
+{
+  "id": "E1-sqhn-survey",
+  "module": "E",
+  "tier": 1,
+  "lo_id": "E.1.1",
+  "accrediting_body": "SQHN",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["accreditation", "patient-safety", "corrective-action", "survey-response", "SQHN"],
+  "setting_variant": "lower_resource",
+  "title": "SQHN Post-Survey: Identifying the Priority Domain",
+  "brief": "A 120-bed district hospital in Kaduna State, Nigeria has received its post-survey report from the Society for Quality in Healthcare in Nigeria (SQHN). Four domains were scored: Clinical Governance 62%, Patient Safety 44%, Information Management 68%, and Human Resources 57%. The hospital quality team must decide where to focus first.",
+  "task": {
+    "stem": "Which domain should the hospital prioritise first, and what is the correct immediate data action?",
+    "options": [
+      {
+        "label": "Patient Safety — it scored the lowest at 44% and carries the highest risk of harm to patients; the immediate action is to audit the specific Patient Safety sub-standards that were flagged and begin a corrective data collection plan."
+      },
+      {
+        "label": "Clinical Governance — it scored 62%, which is the second lowest, so it is nearly as urgent as Patient Safety and should be addressed before the others."
+      },
+      {
+        "label": "Information Management — it scored the highest at 68%, so improvements here will boost the overall score most efficiently."
+      },
+      {
+        "label": "Human Resources — staffing problems affect all other domains, so fixing Human Resources first will automatically improve the other scores."
+      }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Patient Safety at 44% is the lowest-scoring domain and the one most directly linked to patient harm. SQHN standards align with the principle that patient safety deficiencies require immediate corrective action. The right first step is to audit the sub-standards that failed inspection and design a targeted data collection plan to track improvement. SQHN is a Nigerian national accreditation body whose standards are accredited by the International Society for Quality in Health Care External Evaluation Association (ISQua-IEEA), placing them at the same international level of rigour as JCI, COHSASA, and Accreditation Canada.",
+    "wrong": "Clinical Governance at 62% is important but is not the lowest-scoring domain and does not carry the same immediate patient-harm risk as Patient Safety. Information Management at 68% is actually the highest-scoring domain — selecting the top-scoring domain as the priority contradicts the principle of addressing the greatest gap and risk first. Human Resources at 57% matters for sustainability, but staffing issues do not automatically resolve patient safety failures; those sub-standards must be addressed directly and specifically.",
+    "rule_cited": "SQHN accreditation standards require a corrective action plan for each domain scored below the accreditation threshold, prioritised by patient risk.",
+    "citations": ["sqhn", "isqua_ieea"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": {
+    "clinical": null,
+    "statistical": null,
+    "instructional": null,
+    "plain_language": null,
+    "context_review_pending": true
+  }
+}

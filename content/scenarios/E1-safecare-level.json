@@ -1,0 +1,45 @@
+{
+  "id": "E1-safecare-level",
+  "module": "E",
+  "tier": 1,
+  "lo_id": "E.1.2",
+  "accrediting_body": "SafeCare",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["accreditation", "accreditation-levels", "continuous-improvement", "SafeCare", "LMIC"],
+  "setting_variant": "lower_resource",
+  "title": "SafeCare Level 2: What Does It Mean and What Comes Next?",
+  "brief": "A private clinic in Lagos, Nigeria has completed its first SafeCare assessment and scored at Level 2 out of a possible 5 levels. The clinic director wants to know what Level 2 means for the clinic and what the next steps should be.",
+  "task": {
+    "stem": "Which response best answers the clinic director's question about Level 2 and what to do next?",
+    "options": [
+      {
+        "label": "Level 2 means the clinic meets basic safety standards. SafeCare uses a stepwise model: the clinic should review the Level 3 requirements in the assessment report and begin implementing them before the next assessment."
+      },
+      {
+        "label": "Level 2 is the highest level a clinic can reach in its first assessment year, so no further action is needed until the next scheduled assessment."
+      },
+      {
+        "label": "Level 2 means the clinic failed the assessment and should reapply from Level 1 at the next cycle."
+      },
+      {
+        "label": "Level 2 has no practical meaning until the clinic reaches Level 5, so no action should be taken at this stage."
+      }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "SafeCare, developed by the PharmAccess Foundation, uses a five-level stepwise model. Each level confirms that a facility meets a defined set of safety and quality standards, and each step builds on the last. Level 2 is a genuine achievement — it confirms the clinic has met basic safety requirements — but it is not a stopping point. The clinic should use the detailed assessment report to identify which Level 3 requirements are not yet met and begin working on them immediately. SafeCare is used widely in West, East, and Southern Africa and is recognised by ISQua-IEEA.",
+    "wrong": "There is no rule that limits clinics to Level 2 in their first year — some facilities progress faster depending on their readiness. Level 2 is not a failure; it confirms real progress and provides a clear pathway to Level 3. Waiting for no reason between levels contradicts the continuous improvement model that underpins SafeCare. Stating that Level 2 has no practical meaning is incorrect: each level signals compliance with a specific set of standards and unlocks access to further support from the SafeCare program.",
+    "rule_cited": "SafeCare's stepwise assessment model requires facilities to achieve each level sequentially, with each level building on verified compliance from the previous one.",
+    "citations": ["safe_care", "isqua_ieea"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": {
+    "clinical": null,
+    "statistical": null,
+    "instructional": null,
+    "plain_language": null,
+    "context_review_pending": true
+  }
+}

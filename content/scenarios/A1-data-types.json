@@ -1,0 +1,37 @@
+{
+  "id": "A1-data-types",
+  "module": "A",
+  "tier": 1,
+  "lo_id": "A.1.3",
+  "itemType": "MATCH",
+  "chartType": "none",
+  "competency_tags": ["data_structure", "chart_selection"],
+  "setting_variant": "any",
+  "title": "Count, classification, or continuous?",
+  "brief": "Picking the right chart starts with knowing what kind of data you have. Three categories matter most:\n\n- **Count data** — a count of events in a defined area of opportunity (e.g., number of falls per 1,000 patient-days).\n- **Classification data** — each item is sorted into yes/no (e.g., proportion of patients receiving DVT prophylaxis on admission).\n- **Continuous data** — measurements on a numeric scale (e.g., length of stay in hours).\n\nMatch each measure to its data type.",
+  "task": {
+    "stem": "Match each measure to its data type.",
+    "items": [
+      { "id": "m1", "label": "Door-to-needle time for stroke thrombolysis (minutes)." },
+      { "id": "m2", "label": "Proportion of post-partum mothers screened for depression before discharge." },
+      { "id": "m3", "label": "Number of needle-stick injuries per month in the laboratory." },
+      { "id": "m4", "label": "Proportion of children under five with a complete vaccination card." }
+    ],
+    "categories": [
+      { "id": "count",          "label": "Count data" },
+      { "id": "classification", "label": "Classification data" },
+      { "id": "continuous",     "label": "Continuous data" }
+    ]
+  },
+  "answer": {
+    "pairs": { "m1": "continuous", "m2": "classification", "m3": "count", "m4": "classification" }
+  },
+  "debrief": {
+    "correct": "Well done. Knowing the data structure is the first step in choosing the right chart. Continuous → I-MR (or X-bar & S). Classification → p-chart. Count of events in an area of opportunity → u-chart or c-chart, depending on whether the area of opportunity varies.",
+    "wrong": "Re-check the structure of each measure. Door-to-needle time is a measurement on a scale → continuous. Proportions screened or vaccinated are classification (each patient is yes or no). Needle-stick injuries are counts of events in a time window → count data.",
+    "rule_cited": "Data structure → chart type — Provost & Murray ch. 5.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

@@ -1,0 +1,44 @@
+{
+  "id": "G1-equity-stratify",
+  "module": "G",
+  "tier": 1,
+  "lo_id": "G.1.1",
+  "itemType": "MCQ",
+  "chartType": "table",
+  "competency_tags": ["equity_stratification", "data_interpretation"],
+  "setting_variant": "lower_resource",
+  "title": "When stratification changes the story",
+  "brief": "The district MoH dashboard reports the under-five **fully-immunised** coverage at **87%**, which looks well above the national 80% target. The {{exec2}} is preparing to congratulate the {{region}} immunisation team in the next quarterly review.\n\nBefore the meeting, the M&E officer shares the disaggregated figures below.",
+  "exhibit": {
+    "kind": "svg-table",
+    "chartType": "table",
+    "title": "Under-five full immunisation coverage by sub-district",
+    "columns": ["Sub-district", "Children U5 surveyed", "Fully immunised", "Coverage %"],
+    "rows": [
+      ["Urban centre",       420, 394, "94%"],
+      ["Peri-urban A",       310, 281, "91%"],
+      ["Peri-urban B",       280, 247, "88%"],
+      ["Rural — riverine",   190, 110, "58%"],
+      ["Rural — pastoralist",150,  82, "55%"],
+      ["District average",  1350, 1114, "82%"]
+    ]
+  },
+  "task": {
+    "stem": "What should you tell the {{exec2}}?",
+    "options": [
+      { "label": "Congratulate the team — 82% district average is above target, and stratification is just operational noise." },
+      { "label": "Re-check the maths — the district average looks inconsistent with the published 87%, and two sub-districts are under 60% despite the strong urban result." },
+      { "label": "Wait for next quarter — the sample sizes in the rural sub-districts are too small to act on." },
+      { "label": "Stratify by gender of child as well — equity is mainly about gender." }
+    ]
+  },
+  "answer": { "correctIndex": 1 },
+  "debrief": {
+    "correct": "Yes. The district headline (87% or 82%, depending on which number you trust) **hides** two sub-districts under 60%. Telling that story to the {{exec2}} — and acting on it — is the equity move. The reported headline also looks inconsistent with the disaggregated total, which is itself worth raising with whoever produced the dashboard. Equity stratification by geography, language, wealth, or gender is core to interpreting a system-level number, not an optional add-on.",
+    "wrong": "An aggregate number can hide inequity that is the actual story. Here the urban result (94%) pulls the headline above target while the riverine and pastoralist sub-districts sit under 60%. Stratifying by where people live changes the question from ‘are we doing well overall?’ to ‘who is being left behind, and what will we do about it?’",
+    "rule_cited": "Equity-stratified measurement — WHO Handbook for National Quality Policy and Strategy.",
+    "citations": ["who_nqps", "nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

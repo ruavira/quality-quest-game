@@ -1,0 +1,45 @@
+{
+  "id": "C2-rca2",
+  "module": "C",
+  "tier": 2,
+  "lo_id": "C.2.2",
+  "itemType": "MATCH",
+  "chartType": "none",
+  "runChartRule": null,
+  "competency_tags": ["rca2", "causal_analysis", "patient_safety"],
+  "setting_variant": "lower_resource",
+  "title": "RCA2 — match contributing factors to causal levels",
+  "brief": "A patient at Nakuru District Hospital received the wrong blood type (B+ instead of O+) during a routine post-operative transfusion. The patient survived after emergency treatment for a haemolytic reaction.\n\nThe hospital safety committee has completed an investigation using the **RCA² framework**, which organises contributing factors into three causal levels:\n\n- **Human factors** — the immediate actions or omissions of an individual at the point of care\n- **Process factors** — the tasks, protocols, or technology that should have prevented the error\n- **System / organisational factors** — the policies, training systems, and governance structures that create the conditions for error",
+  "task": {
+    "stem": "Match each contributing factor identified in the RCA² to the correct causal level.",
+    "items": [
+      { "id": "f1", "label": "The nurse checked the blood bag label only once, not twice as required." },
+      { "id": "f2", "label": "The pre-transfusion protocol required two-nurse verification but the second nurse was not called." },
+      { "id": "f3", "label": "The blood bank used a manual logbook with no cross-reference check against the patient wristband." },
+      { "id": "f4", "label": "The hospital had no mandatory transfusion competency assessment for nurses newly deployed from other wards." },
+      { "id": "f5", "label": "Ward staffing was 60% below standard on the day of the incident due to delayed salary payments." }
+    ],
+    "categories": [
+      { "id": "human",   "label": "Human factor (individual action / omission at point of care)" },
+      { "id": "process", "label": "Process factor (task, protocol, or technology gap)" },
+      { "id": "system",  "label": "System / organisational factor (governance, policy, training)" }
+    ]
+  },
+  "answer": {
+    "pairs": {
+      "f1": "human",
+      "f2": "process",
+      "f3": "process",
+      "f4": "system",
+      "f5": "system"
+    }
+  },
+  "debrief": {
+    "correct": "Well matched. **Human factors** are the acts or omissions of the individual at the bedside — here, the nurse's single-check. **Process factors** are the protocols and tools that should catch errors before they reach the patient — the two-nurse verification that was skipped and the blood bank's manual logbook without a cross-check. **System factors** are the upstream conditions that allowed those process gaps to exist — no mandatory competency check for newly deployed nurses and a staffing shortfall that increased workload pressure. RCA² aims to generate actions at the process and system levels, because fixing human factors alone (retraining one person) rarely prevents recurrence.",
+    "wrong": "Review the three causal levels. **Human**: the immediate action of the nurse (single-label check). **Process**: the protocol that should have caught the error (two-nurse verification) and the tool that should have flagged the mismatch (blood bank logbook cross-check). **System**: the conditions upstream of the incident (no competency assessment policy, staffing deficit). A common mistake is coding 'the nurse didn't follow protocol' as a process factor — it is a human factor; the *absence of an enforced protocol* is the process factor.",
+    "rule_cited": "RCA² — three causal levels: human, process, system/organisation. NPSF RCA² guide.",
+    "citations": ["npsf_rca2", "who_ps_curriculum", "vincent_ps"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

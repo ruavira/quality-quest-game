@@ -1,0 +1,31 @@
+{
+  "schema": "qq-citations@1",
+  "sources": {
+    "provost_murray_2nd":   "Provost LP, Murray SK. The Health Care Data Guide: Learning from Data for Improvement. 2nd ed. Jossey-Bass, 2022.",
+    "ihi_qi_104":           "IHI Open School. QI 104: Interpreting Data: Run Charts, Control Charts, and Other Measurement Tools.",
+    "ihi_qi_103":           "IHI Open School. QI 103: Testing and Measuring Changes with PDSA Cycles.",
+    "ihi_qi_102":           "IHI Open School. QI 102: The Model for Improvement: Your Engine for Change.",
+    "who_ps_curriculum":    "World Health Organization. Patient Safety Curriculum Guide: Multi-professional Edition. 2011.",
+    "who_icps":             "World Health Organization. Conceptual Framework for the International Classification for Patient Safety.",
+    "who_nqps":             "World Health Organization. Handbook for National Quality Policy and Strategy.",
+    "nahq_hqcf":            "National Association for Healthcare Quality. Healthcare Quality Competency Framework.",
+    "solberg_1997":         "Solberg LI, Mosser G, McDonald S. The three faces of performance measurement: improvement, accountability, and research. Jt Comm J Qual Improv. 1997;23(3):135–147.",
+    "iom_steeep":           "Institute of Medicine. Crossing the Quality Chasm: A New Health System for the 21st Century. 2001.",
+    "ahrq_psnet":           "AHRQ Patient Safety Network (PSNet).",
+    "safe_care":            "SafeCare International healthcare quality standards (PharmAccess Foundation).",
+    "sqhn":                 "Society for Quality in Healthcare in Nigeria (SQHN). Accreditation standards (ISQua-IEEA accredited).",
+    "cohsasa":              "Council for Health Service Accreditation of Southern Africa (COHSASA). Accreditation standards and survey process.",
+    "nhia":                 "Nigeria Health Insurance Authority (NHIA). Provider accreditation and reimbursement framework.",
+    "isqua_ieea":           "International Society for Quality in Healthcare External Evaluation Association (ISQua-IEEA). Programme for International Accreditation.",
+    "jci":                  "Joint Commission International (JCI). International Patient Safety Goals (IPSGs).",
+    "accreditation_canada": "Accreditation Canada. Required Organizational Practices — Diamond Accreditation Program.",
+    "cqc":                  "Care Quality Commission (CQC). Single Assessment Framework (SAF). England.",
+    "achs":                 "Australian Council on Healthcare Standards (ACHS). EQuIP National accreditation program.",
+    "npsf_rca2":            "National Patient Safety Foundation (NPSF). RCA²: Improving Root Cause Analyses and Actions to Prevent Harm. 2016.",
+    "ahrq_fmea":            "AHRQ. Failure Mode and Effects Analysis (FMEA). Patient Safety Network.",
+    "marx_just_culture":    "Marx D. Patient Safety and the 'Just Culture': A Primer for Health Care Executives. Columbia University, 2001.",
+    "reason_accident":      "Reason J. Managing the Risks of Organizational Accidents. Ashgate, 1997.",
+    "ihi_ps_101":           "IHI Open School. PS 101: Introduction to Patient Safety.",
+    "vincent_ps":           "Vincent C. Patient Safety. 2nd ed. Wiley-Blackwell, 2010."
+  }
+}

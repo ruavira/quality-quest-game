@@ -1,0 +1,30 @@
+{
+  "id": "H1-frontline-data",
+  "module": "H",
+  "tier": 1,
+  "lo_id": "H.1.1",
+  "itemType": "MCQ",
+  "chartType": "run",
+  "competency_tags": ["chart_choice_for_audience", "data_visualisation", "plain_language_data"],
+  "setting_variant": "lower_resource",
+  "title": "Presenting data to your frontline team",
+  "brief": "You are the Quality Lead at a monthly facility in-charge meeting. You have 12 months of data on the proportion of children under five screened for malnutrition at each visit. The run chart shows a clear downward shift starting in month 7 — six consecutive months below the median — meaning screening has worsened consistently.\n\nYour audience is a team of ten Community Health Extension Workers (CHEWs) who do the screening. They have not had statistics training. You have five minutes.",
+  "task": {
+    "stem": "Which approach gives the CHEWs the most useful information in the time available?",
+    "options": [
+      { "label": "Show the run chart, circle the six points below the median, and say: 'Screening dropped consistently from July onwards. We need to find out why together.'" },
+      { "label": "Read out all 12 monthly percentage values from a printed table." },
+      { "label": "Show only the annual average and compare it to the national target." },
+      { "label": "Show a pie chart splitting the reasons for missed screenings." }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Yes. The run chart with the shift circled tells the CHEWs exactly when the problem started and how long it has lasted — the two things they need to generate ideas about the cause. A plain-language caption converts the statistical signal into a statement any team member can act on, without statistical training. Frontline workers who see their own data in a clear visual are far more likely to engage with improvement than those who receive a summary number.",
+    "wrong": "Match the visual to what the audience needs to do next. CHEWs need to see that something changed, roughly when it changed, and that they are expected to help explain it. A table of 12 values requires mental arithmetic they should not have to do in five minutes. A single annual average hides the time pattern — it would mask the shift entirely if the first six months were strong. A pie chart of reasons is useful, but only after the team agrees there is a sustained problem to investigate. The run chart with the shift marked is the bridge between the data and the team's own experience of what changed in July.",
+    "rule_cited": "Visual choice by audience — Provost & Murray ch. 7; IHI QI 104; WHO NQPS data use for frontline teams.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104", "who_nqps"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

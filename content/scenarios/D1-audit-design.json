@@ -1,0 +1,30 @@
+{
+  "id": "D1-audit-design",
+  "module": "D",
+  "tier": 1,
+  "lo_id": "D.1.2",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["audit_design", "sampling"],
+  "setting_variant": "lower_resource",
+  "title": "Design a chart audit",
+  "brief": "Your district hospital wants to audit compliance with the hand hygiene (HH) policy. The aim is to estimate the current compliance rate across all wards. There are 8 wards, each with 4–6 clinical staff per shift. Audits must be done by a trained observer. You have one trained observer available for 2 hours per week.",
+  "task": {
+    "stem": "Which audit design best fits this aim and these constraints?",
+    "options": [
+      { "label": "Systematic random sample: observe every 3rd opportunity across all wards during the 2 hours each week; rotate start ward weekly to avoid bias." },
+      { "label": "Observe all hand hygiene opportunities in Ward 1 only for the full 2 hours each week, then report a hospital-wide rate." },
+      { "label": "Ask each ward in-charge to self-report their ward's compliance rate at the end of the month." },
+      { "label": "Observe all 8 wards simultaneously by dividing 15 minutes per ward." }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Yes. A systematic random sample spread across all wards — with ward rotation — gives you a defensible hospital-wide estimate within your resource constraint. It avoids the two main biases: convenience bias (always observing the most accessible ward) and Hawthorne effect clustering (staff in one ward learn they are being watched and change behaviour, inflating the rate).",
+    "wrong": "Observing only one ward gives a ward rate, not a hospital-wide rate — it cannot be generalised. Self-reporting by ward in-charges is not an audit; it is self-assessment, which consistently overestimates compliance because of social-desirability bias. Splitting 15 minutes across 8 wards simultaneously requires 8 observers — you have one. The only feasible design that covers the whole hospital is a systematic sample with rotation, even if each week's sample is small.",
+    "rule_cited": "Audit sampling design — NAHQ HQ Essentials; IHI QI 102 measurement planning.",
+    "citations": ["nahq_hqcf", "ihi_qi_102"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

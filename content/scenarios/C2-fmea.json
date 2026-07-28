@@ -1,0 +1,44 @@
+{
+  "id": "C2-fmea",
+  "module": "C",
+  "tier": 2,
+  "lo_id": "C.2.3",
+  "itemType": "ORDER",
+  "chartType": "table",
+  "runChartRule": null,
+  "competency_tags": ["fmea", "risk_assessment", "patient_safety"],
+  "setting_variant": "any",
+  "title": "FMEA — prioritise failure modes by risk",
+  "brief": "St. Mary's Mission Hospital is conducting a **proactive Failure Mode and Effects Analysis (FMEA)** of its oral medication dispensing process. The team has identified four failure modes and rated each on three dimensions:\n\n- **Severity (S)**: how harmful the failure is if it reaches the patient (1 = minimal, 10 = catastrophic)\n- **Probability (P)**: how likely the failure is to occur (1 = rare, 10 = almost certain)\n- **Detectability (D)**: how hard it is to detect before it reaches the patient (1 = easily caught, 10 = nearly impossible to detect)\n\n**Risk Priority Number (RPN) = S × P × D.** A higher RPN means a higher priority for corrective action.",
+  "exhibit": {
+    "kind": "table",
+    "title": "FMEA — oral medication dispensing failure modes",
+    "columns": ["Failure mode", "Severity (S)", "Probability (P)", "Detectability (D)"],
+    "rows": [
+      ["Wrong drug dispensed — look-alike / sound-alike name confusion", "8", "6", "3"],
+      ["Patient receives double dose — incomplete shift handover", "7", "4", "7"],
+      ["Expired medication dispensed — monthly expiry check only", "5", "2", "8"],
+      ["Dispensing label is illegible — patient misreads dose at home", "6", "5", "5"]
+    ]
+  },
+  "task": {
+    "stem": "Put the four failure modes in order from highest to lowest Risk Priority Number (RPN = S × P × D). Drag or use the arrows to reorder.",
+    "steps": [
+      { "id": "B", "label": "Double dose — incomplete handover (S=7, P=4, D=7)" },
+      { "id": "D", "label": "Illegible label — patient misreads dose (S=6, P=5, D=5)" },
+      { "id": "A", "label": "Wrong drug — look-alike names (S=8, P=6, D=3)" },
+      { "id": "C", "label": "Expired medication dispensed (S=5, P=2, D=8)" }
+    ]
+  },
+  "answer": {
+    "order": ["B", "D", "A", "C"]
+  },
+  "debrief": {
+    "correct": "Correct order by RPN:\n\n1. **Double dose (B): RPN = 7 × 4 × 7 = 196** — high severity, moderate probability, and difficult to detect (the patient or carer may not recognise an overdose). Highest priority.\n2. **Illegible label (D): RPN = 6 × 5 × 5 = 150** — moderate on all three dimensions but worrying because detection depends on the patient reading the label correctly — an unreliable last defence.\n3. **Wrong drug — LASA (A): RPN = 8 × 6 × 3 = 144** — the highest severity of the four, but relatively detectable (the dispenser may notice a name mismatch if the process is followed).\n4. **Expired medication (C): RPN = 5 × 2 × 8 = 80** — lowest probability and severity; the near-impossible detectability score is high but the overall product is lowest.\n\nThe key FMEA insight: high severity alone does not drive priority — probability and detectability shape the composite risk.",
+    "wrong": "Calculate RPN = S × P × D for each failure mode: Wrong drug (A) = 8×6×3 = **144**; Double dose (B) = 7×4×7 = **196**; Expired medication (C) = 5×2×8 = **80**; Illegible label (D) = 6×5×5 = **150**. Order: B (196) → D (150) → A (144) → C (80). A common error is ordering by Severity alone — in FMEA, a highly severe but rarely occurring and easily detectable failure ranks lower than a moderately severe but common and hard-to-detect failure.",
+    "rule_cited": "FMEA: RPN = Severity × Probability × Detectability. Higher RPN = higher priority for corrective action.",
+    "citations": ["ahrq_fmea", "who_ps_curriculum", "ihi_ps_101"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "D2-abstraction-reliability",
+  "module": "D",
+  "tier": 2,
+  "lo_id": "D.2.1",
+  "itemType": "MATCH",
+  "chartType": "none",
+  "competency_tags": ["chart_abstraction", "inter_rater_reliability"],
+  "setting_variant": "any",
+  "title": "Spot the reliability problem",
+  "brief": "Two trained abstractors independently reviewed the same 10 patient records for a hand-hygiene compliance audit. Their results for 5 of the records are shown below. For each record, decide whether the pair's results indicate a **reliability problem** or **no reliability problem**.\n\nReliability problem = the two abstractors reached different conclusions on whether the criterion was met, was not met, or was uncodeable.",
+  "task": {
+    "stem": "Classify each record pair.",
+    "items": [
+      { "id": "r1", "label": "Record #1 — Abstractor A: Met · Abstractor B: Met" },
+      { "id": "r2", "label": "Record #2 — Abstractor A: Not met · Abstractor B: Exclude (missing data)" },
+      { "id": "r3", "label": "Record #3 — Abstractor A: Met · Abstractor B: Not met" },
+      { "id": "r4", "label": "Record #4 — Abstractor A: Exclude · Abstractor B: Exclude" },
+      { "id": "r5", "label": "Record #5 — Abstractor A: Not met · Abstractor B: Not met" }
+    ],
+    "categories": [
+      { "id": "problem",    "label": "Reliability problem — results differ" },
+      { "id": "no_problem", "label": "No reliability problem — results agree" }
+    ]
+  },
+  "answer": {
+    "pairs": {
+      "r1": "no_problem",
+      "r2": "problem",
+      "r3": "problem",
+      "r4": "no_problem",
+      "r5": "no_problem"
+    }
+  },
+  "debrief": {
+    "correct": "Correct. Records #1, #4, and #5 show agreement between abstractors — same conclusion, no problem. Records #2 and #3 show disagreement. Record #2 is a subtle case: 'Not met' and 'Exclude' are different conclusions. One abstractor decided the criterion was failed; the other decided there was not enough data to judge. These require adjudication — a senior reviewer or a third abstractor must resolve the discrepancy before the data can be used.",
+    "wrong": "Agreement means both abstractors reached the same conclusion — 'Met/Met', 'Not met/Not met', or 'Exclude/Exclude'. Any mix of different codes is a reliability problem, even when the codes are 'similar' (like 'Not met' vs 'Exclude'). Record #2 is the hardest: 'Not met' and 'Exclude' sound like near-agreement, but they carry different implications for the measure rate and the improvement response. Always treat different codes as a reliability flag.",
+    "rule_cited": "Inter-rater reliability — chart abstraction training and adjudication. NAHQ HQ Essentials.",
+    "citations": ["nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

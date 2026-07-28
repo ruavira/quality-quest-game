@@ -1,0 +1,45 @@
+{
+  "id": "E1-nhia-data",
+  "module": "E",
+  "tier": 1,
+  "lo_id": "E.1.3",
+  "accrediting_body": "NHIA",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["accreditation", "data-completeness", "NHIA", "compliance", "corrective-action"],
+  "setting_variant": "lower_resource",
+  "title": "NHIA Renewal: Protecting Accreditation with Incomplete Data",
+  "brief": "A hospital in Kano, Nigeria is renewing its accreditation with the Nigeria Health Insurance Authority (NHIA). NHIA requires quarterly submission of five indicators: bed occupancy rate, average length of stay, nosocomial infection rate, maternal mortality ratio, and under-5 mortality rate. The hospital's health management information system (HMIS) has complete data for three of the five indicators, but the nosocomial infection rate and under-5 mortality rate have not been routinely collected.",
+  "task": {
+    "stem": "Which action best protects the hospital's accreditation eligibility during the renewal process?",
+    "options": [
+      {
+        "label": "Submit data for the three available indicators, include a written explanation for the two missing indicators, and attach a corrective action plan with a clear timeline for establishing routine data collection."
+      },
+      {
+        "label": "Calculate estimated values for the two missing indicators based on national averages and submit them alongside the three complete indicators."
+      },
+      {
+        "label": "Request an extension from NHIA without submitting any data, so there is more time to collect the missing indicators."
+      },
+      {
+        "label": "Submit only the three complete indicators with no mention of the other two, to avoid drawing attention to the gap."
+      }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Submitting verified data for the three available indicators, explaining the gap honestly, and providing a corrective action plan demonstrates good faith and administrative transparency. NHIA reviewers are trained to distinguish between facilities that acknowledge and address gaps and those that conceal them. A credible plan with a realistic timeline is treated as evidence of a functioning quality system, not as grounds for immediate penalty.",
+    "wrong": "Submitting estimated or nationally averaged values in place of facility-specific data is data fabrication. If discovered, this can result in immediate revocation of accreditation eligibility. Requesting an extension without submitting anything leaves the hospital formally non-compliant for the entire extension period, which creates its own risk. Submitting an incomplete report with no explanation is treated as a non-compliant submission — NHIA reviewers will identify the missing required indicators and flag the omission as more serious than a disclosed gap would have been.",
+    "rule_cited": "NHIA accreditation standards require quarterly submission of all five designated core indicators; undisclosed gaps in required data are treated as non-compliance.",
+    "citations": ["nhia"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": {
+    "clinical": null,
+    "statistical": null,
+    "instructional": null,
+    "plain_language": null,
+    "context_review_pending": true
+  }
+}

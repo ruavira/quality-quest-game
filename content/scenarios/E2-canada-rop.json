@@ -1,0 +1,45 @@
+{
+  "id": "E2-canada-rop",
+  "module": "E",
+  "tier": 2,
+  "lo_id": "E.2.2",
+  "accrediting_body": "Accreditation Canada",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["AccreditationCanada", "required-organizational-practice", "medication-reconciliation", "corrective-action", "survey-response"],
+  "setting_variant": "higher_resource",
+  "title": "Accreditation Canada ROP: Responding to a Medication Reconciliation Finding",
+  "brief": "A hospital pursuing Accreditation Canada Diamond accreditation has received its preliminary survey report. The report flags that there is no documented medication reconciliation process at admission — this is a Required Organizational Practice (ROP). The hospital has 90 days to submit a formal response.",
+  "task": {
+    "stem": "Which response correctly addresses the Required Organizational Practice finding within the 90-day window?",
+    "options": [
+      {
+        "label": "Treat this as a mandatory gap: develop and implement a medication reconciliation process within 90 days, collect compliance data from the first day of implementation, and submit evidence of improvement at the follow-up review."
+      },
+      {
+        "label": "Treat it as an advisory finding — Required Organizational Practices are recommendations, so the hospital can address it in its own time without risking its accreditation status."
+      },
+      {
+        "label": "Request a waiver from Accreditation Canada on the grounds that the hospital's patient population is low-risk and medication errors are unlikely."
+      },
+      {
+        "label": "Begin planning the process after the 90-day window has closed and explain the delay in a letter, as the planning phase itself is evidence of good intent."
+      }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Required Organizational Practices (ROPs) are Accreditation Canada's non-negotiable patient safety practices. They are based on evidence that implementing them reduces the risk of serious harm. Failure to meet an ROP within the required timeframe can result in a conditional or non-accredited status. Medication reconciliation is one of several ROPs — others include falls prevention strategies, hand hygiene audits, and safe surgery checklists. Diamond accreditation, Accreditation Canada's highest level, requires all ROPs to be fully met. Collecting data from day one of implementation allows the hospital to demonstrate a measurable improvement trajectory rather than a single endpoint result.",
+    "wrong": "ROPs are requirements, not recommendations. There is no discretion about whether to address them, and they carry clear accreditation consequences if unmet. Accreditation Canada does not grant waivers for ROPs based on perceived patient risk — the evidence base for each ROP applies across all settings. Beginning action after the 90-day window has closed is a formal non-compliance, and a letter explaining the delay does not substitute for a corrective action completed within the required period.",
+    "rule_cited": "Accreditation Canada's Required Organizational Practices are mandatory; failure to address an ROP finding within the specified response window affects accreditation status.",
+    "citations": ["accreditation_canada"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": {
+    "clinical": null,
+    "statistical": null,
+    "instructional": null,
+    "plain_language": null,
+    "context_review_pending": true
+  }
+}

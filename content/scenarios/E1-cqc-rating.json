@@ -1,0 +1,45 @@
+{
+  "id": "E1-cqc-rating",
+  "module": "E",
+  "tier": 1,
+  "lo_id": "E.1.1",
+  "accrediting_body": "CQC",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["CQC", "single-assessment-framework", "quality-statements", "requires-improvement", "NHS"],
+  "setting_variant": "higher_resource",
+  "title": "CQC Single Assessment Framework: Responding to a 'Requires Improvement' Rating",
+  "brief": "An NHS trust in England has received its Care Quality Commission (CQC) assessment under the Single Assessment Framework (SAF). The 'Safe' quality theme has been rated 'Requires Improvement.' The trust quality director asks the quality improvement (QI) team which data they should review first and what action they should take.",
+  "task": {
+    "stem": "Which action best responds to this CQC finding in the 'Safe' theme?",
+    "options": [
+      {
+        "label": "Review the specific Quality Statements within the 'Safe' theme that were rated as 'Requires Improvement,' identify what evidence or data was absent or weak, and build an improvement plan with measurable targets against those specific statements."
+      },
+      {
+        "label": "Appeal the overall 'Safe' rating to CQC before doing anything else, since the rating may be based on incomplete information."
+      },
+      {
+        "label": "Collect data across all five SAF themes simultaneously to show CQC that the trust is committed to improvement across the board."
+      },
+      {
+        "label": "Wait for the next scheduled CQC inspection before acting, as any changes made now will not be assessed until then anyway."
+      }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "The CQC Single Assessment Framework (SAF) organises assessment around five quality themes: Safe, Effective, Caring, Responsive, and Well-led. Within each theme, specific Quality Statements describe what good practice looks like. When a theme is rated 'Requires Improvement,' the first action is to review which individual Quality Statements drove that rating and identify the specific evidence gaps. The four rating levels are Outstanding, Good, Requires Improvement, and Inadequate. Quality Statements replaced the previous Key Lines of Enquiry (KLOEs) under the SAF. A focused, evidence-based improvement plan linked to the flagged statements is what CQC expects to see.",
+    "wrong": "Appealing a rating does not substitute for taking corrective action; CQC expects responsive improvement regardless of whether an appeal is filed, and appeals have a high threshold. Collecting data across all five themes simultaneously spreads resources thinly and ignores the specific finding — the trust knows that 'Safe' is the priority. Waiting for the next scheduled inspection before acting is a serious error: unaddressed 'Requires Improvement' findings can escalate to an 'Inadequate' rating and trigger enforcement action, including special measures, before the next planned assessment.",
+    "rule_cited": "Under the CQC Single Assessment Framework, trusts rated 'Requires Improvement' in any theme are expected to produce and implement a responsive improvement plan linked to the specific Quality Statements that drove the rating.",
+    "citations": ["cqc"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": {
+    "clinical": null,
+    "statistical": null,
+    "instructional": null,
+    "plain_language": null,
+    "context_review_pending": true
+  }
+}

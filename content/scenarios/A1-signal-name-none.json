@@ -1,0 +1,44 @@
+{
+  "id": "A1-signal-name-none",
+  "module": "A",
+  "tier": 1,
+  "lo_id": "A.1.4",
+  "itemType": "MCQ",
+  "chartType": "run",
+  "competency_tags": ["run_chart_rules", "signal_vs_noise", "tampering"],
+  "setting_variant": "any",
+  "title": "Name the signal — or is there one?",
+  "brief": "A manager glances at this chart of weekly antenatal-clinic attendance (%) and wants to 'do something about the dips'. The median is the dashed line.\n\nApply the four run-chart signals before you answer — and be honest if none of them fires.",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "Antenatal-clinic attendance (%) — weekly",
+    "xLabel": "Week",
+    "yLabel": "Attendance %",
+    "data": [
+      { "x": "W1", "y": 68 }, { "x": "W2", "y": 69 }, { "x": "W3", "y": 72 }, { "x": "W4", "y": 71 },
+      { "x": "W5", "y": 67 }, { "x": "W6", "y": 68 }, { "x": "W7", "y": 73 }, { "x": "W8", "y": 72 },
+      { "x": "W9", "y": 69 }, { "x": "W10", "y": 67 }, { "x": "W11", "y": 71 }, { "x": "W12", "y": 73 },
+      { "x": "W13", "y": 68 }, { "x": "W14", "y": 71 }
+    ],
+    "median": 70
+  },
+  "task": {
+    "stem": "Which run-chart signal does this chart show?",
+    "options": [
+      { "label": "A shift — a run of six or more points on one side of the median." },
+      { "label": "A trend — five or more points all climbing or all falling." },
+      { "label": "An astronomical point — one point strikingly different from the rest." },
+      { "label": "No signal — this is ordinary (common-cause) variation." }
+    ]
+  },
+  "answer": { "correctIndex": 3 },
+  "debrief": {
+    "correct": "Correct — **no signal**. The points wobble either side of the median (70%) with no run of six on one side (no shift), no run of five consecutive steps in one direction (no trend), and no point strikingly far from the rest (no astronomical point). This is ordinary **common-cause variation**. Acting on the 'dips' would be **tampering** — reacting to noise. The disciplined response is to keep watching and change nothing yet.",
+    "wrong": "Check each rule. Longest run on one side of the median is only two (no shift); the longest string of consecutive up-or-down steps is short (no trend); no point is dramatically different (no astronomical point). So **no signal fires** — this is common-cause noise. Reacting to it would be tampering. Keep watching; change nothing yet.",
+    "rule_cited": "Common- vs special-cause variation; the tampering trap — Provost & Murray (2nd ed.), IHI QI 104.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

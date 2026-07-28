@@ -1,0 +1,30 @@
+{
+  "id": "D2-peer-review",
+  "module": "D",
+  "tier": 2,
+  "lo_id": "D.2.3",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["peer_review", "preventability_classification"],
+  "setting_variant": "any",
+  "title": "Apply a peer review classification",
+  "brief": "Your hospital's peer review committee uses a 3-level preventability classification:\n\n- **Level 1 — Not preventable:** The adverse outcome was not avoidable given the information and resources available at the time.\n- **Level 2 — Possibly preventable:** Different care *might* have changed the outcome, but there is reasonable uncertainty.\n- **Level 3 — Preventable:** The evidence clearly shows that different, feasible care would likely have prevented the adverse outcome.\n\n**Case summary:** A 42-year-old woman with known penicillin allergy was prescribed amoxicillin post-operatively. The allergy was documented in the paper medication chart but not transferred to the ward drug kardex. She received one dose before a nurse noticed the discrepancy. No adverse reaction occurred.",
+  "task": {
+    "stem": "Which preventability classification is most appropriate, and why?",
+    "options": [
+      { "label": "Level 3 — Preventable. The allergy was documented; the failure was a transferable, system-level transcription step that did not happen. A feasible process (allergy check at kardex completion) would likely have prevented the prescribing error." },
+      { "label": "Level 1 — Not preventable. The allergy information existed but the prescriber could not have known it was missing from the kardex." },
+      { "label": "Level 2 — Possibly preventable. Because no adverse reaction occurred, the clinical harm is uncertain and so the preventability is uncertain." },
+      { "label": "Level 3 — Preventable. The prescriber should have checked the original medication chart before prescribing." }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Correct — Level 3. The allergy was documented. The failure was a specific, identifiable system gap: allergy information was not transferred from the paper medication chart to the ward drug kardex. A feasible process fix — a mandatory allergy-transfer check at kardex completion, or a single source of truth — would likely have prevented this. Preventability classification is about the *process and system*, not about whether the patient was harmed. Near-misses can be Level 3.",
+    "wrong": "Option B (Level 1) treats this as unavoidable, but the information *was available* — it just was not in the right place at the right time. That is a system failure, not an information gap. Option C conflates harm severity with preventability — these are independent axes. A near-miss with no harm can still be Level 3 preventable; the question is whether better process would have prevented the error, not whether injury occurred. Option D is partially correct (the prescriber bears responsibility) but misses the system-level fix: blaming an individual without fixing the transcription gap will not prevent recurrence.",
+    "rule_cited": "Peer review preventability classification — NAHQ HQ Essentials: Peer Review; WHO Patient Safety Curriculum Guide Topic 5.",
+    "citations": ["nahq_hqcf", "who_ps_curriculum"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

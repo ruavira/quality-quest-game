@@ -1,0 +1,45 @@
+{
+  "id": "E2-isqua-meta",
+  "module": "E",
+  "tier": 2,
+  "lo_id": "E.2.1",
+  "accrediting_body": "ISQua-IEEA",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["meta-accreditation", "ISQua-IEEA", "SQHN", "international-standards", "accreditation-recognition"],
+  "setting_variant": "any",
+  "title": "ISQua-IEEA Meta-Accreditation: What It Means for SQHN-Accredited Hospitals",
+  "brief": "A quality officer at a Nigerian hospital is briefing hospital leadership. The hospital holds accreditation from the Society for Quality in Healthcare in Nigeria (SQHN). The chief executive officer has asked: 'ISQua-IEEA accredits SQHN's standards — what does that actually mean for our hospital?'",
+  "task": {
+    "stem": "Which explanation correctly describes what ISQua-IEEA meta-accreditation means for a hospital accredited by SQHN?",
+    "options": [
+      {
+        "label": "ISQua-IEEA has independently evaluated SQHN's standards and processes and confirmed they meet globally recognised criteria. An SQHN accreditation therefore signals the same level of standards rigour as accreditation by JCI, COHSASA, or Accreditation Canada — these bodies are in the same international class."
+      },
+      {
+        "label": "SQHN is a branch of ISQua, and all individual survey decisions made by SQHN are reviewed and approved by ISQua before they take effect."
+      },
+      {
+        "label": "ISQua-IEEA membership automatically gives the hospital accreditation status with all other ISQua member bodies worldwide, so no separate surveys are needed."
+      },
+      {
+        "label": "ISQua sets Nigeria's accreditation standards directly, and SQHN's role is to implement those standards as written by ISQua."
+      }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "The International Society for Quality in Health Care External Evaluation Association (ISQua-IEEA) functions as the 'accreditor of accreditors.' It evaluates whether a national or regional accreditation body's standards, surveyor training, and processes meet an internationally agreed set of criteria. Bodies that pass this evaluation — including SQHN, COHSASA, JCI, Accreditation Canada, and ACHS — form a small global club whose accreditation programmes are considered equivalent in rigour. For the hospital, this means that SQHN accreditation carries credibility beyond Nigeria's borders and is recognised in cross-border quality comparisons and donor reporting.",
+    "wrong": "SQHN is an independent Nigerian body; ISQua-IEEA does not sit above it in a chain of command or review its individual survey decisions. The meta-accreditation process evaluates the standards and systems, not the outcomes of specific surveys. ISQua-IEEA membership does not transfer accreditation status between bodies — each accreditation body surveys facilities separately, and a hospital must apply to each body independently. ISQua does not write Nigeria's standards; SQHN develops its own standards, and ISQua-IEEA evaluates them against international criteria.",
+    "rule_cited": "ISQua-IEEA meta-accreditation confirms that an accreditation body's standards and processes meet international criteria; it does not transfer accreditation between bodies or review individual survey decisions.",
+    "citations": ["isqua_ieea", "sqhn"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": {
+    "clinical": null,
+    "statistical": null,
+    "instructional": null,
+    "plain_language": null,
+    "context_review_pending": true
+  }
+}

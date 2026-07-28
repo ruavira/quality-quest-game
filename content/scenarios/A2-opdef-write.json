@@ -1,0 +1,60 @@
+{
+  "id": "A2-opdef-write",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.4",
+  "itemType": "WRITE",
+  "chartType": "none",
+  "competency_tags": ["operational_definitions"],
+  "setting_variant": "lower_resource",
+  "title": "Write an operational definition — TB sputum turnaround",
+  "brief": "The PHC clinic's QI team has chosen a new process measure: **proportion of TB-suspect outpatients who receive a sputum smear microscopy result within 48 hours of sample submission**.\n\nBefore data collection begins, the team needs a written operational definition that any two nurses at this clinic could read and use to count the same way.",
+  "task": {
+    "stem": "Write a complete operational definition for this measure.",
+    "context": "**Measure:** Proportion of TB-suspect outpatients with sputum smear microscopy result within 48 hours of sample submission.\n\n**Setting:** District-level PHC clinic. Sputum samples are logged in a paper TB laboratory register and sent to the district lab. Results are phoned back to the clinic and recorded in the same register.",
+    "placeholder": "Write your operational definition here. Aim to include: numerator, denominator, inclusions, exclusions, data source, and measurement window.\n\nExample format:\nNumerator: ...\nDenominator: ...\nInclusions: ...\nExclusions: ...\nData source: ...\nMeasurement window: ..."
+  },
+  "answer": {
+    "passingScore": 5,
+    "rubric": [
+      {
+        "id": "numerator",
+        "label": "Numerator — counts the desired event",
+        "hint": "Should describe TB-suspect patients whose result was received AND recorded within 48 hours of sample submission."
+      },
+      {
+        "id": "denominator",
+        "label": "Denominator — defines the eligible population",
+        "hint": "Should identify all TB-suspect outpatients who submitted a sputum sample in the period — regardless of whether the result arrived in time."
+      },
+      {
+        "id": "inclusions",
+        "label": "Inclusions — explicitly names who or what is in scope",
+        "hint": "e.g., includes first-episode and retreatment suspects; includes samples taken on repeat visits."
+      },
+      {
+        "id": "exclusions",
+        "label": "Exclusions — explicitly names who or what is out of scope",
+        "hint": "e.g., excludes samples where the lab register shows the sample was rejected or lost in transit."
+      },
+      {
+        "id": "data_source",
+        "label": "Data source — a named record or system",
+        "hint": "Should name the specific document or system — e.g., paper TB laboratory register, DHIS2 TB module, clinic referral logbook."
+      },
+      {
+        "id": "measurement_window",
+        "label": "Measurement window — the review period",
+        "hint": "e.g., monthly; calendar month; January 1–31."
+      }
+    ]
+  },
+  "debrief": {
+    "correct": "A strong operational definition names all six components: **numerator** (who was counted as timely), **denominator** (all eligible patients submitted), **inclusions** (who is in scope), **exclusions** (who is out of scope), **data source** (the named register or system), and **measurement window** (the review period). With all six specified, two data collectors at different clinics should reach the same count from the same register.",
+    "wrong": "Check that your definition addresses all six components. The most common gaps: writing the numerator as 'patients with a result' without specifying the 48-hour cut-off; omitting exclusions entirely; naming a vague data source like 'the register' without specifying *which* register; and forgetting the measurement window. Re-read the debrief rubric and try again.",
+    "rule_cited": "Operational definitions — six components: numerator, denominator, inclusions, exclusions, data source, measurement window. Provost & Murray ch. 3; IHI QI 102.",
+    "citations": ["ihi_qi_102", "provost_murray_2nd", "nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

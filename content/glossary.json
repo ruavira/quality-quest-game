@@ -1,0 +1,25 @@
+{
+  "schema": "qq-glossary@1",
+  "lmic": {
+    "exec": "Medical Director",
+    "exec2": "Programme Director",
+    "board": "directorate brief",
+    "board_meeting": "quarterly governance meeting",
+    "ehr": "HMIS / DHIS2 export",
+    "region": "district",
+    "accrediting_body": "SafeCare assessor",
+    "patient_experience": "patient experience survey",
+    "qi_team": "quality improvement team"
+  },
+  "hic": {
+    "exec": "Chief Medical Officer",
+    "exec2": "Chief Quality Officer",
+    "board": "board report",
+    "board_meeting": "board meeting",
+    "ehr": "EHR data query",
+    "region": "region",
+    "accrediting_body": "Joint Commission surveyor",
+    "patient_experience": "HCAHPS",
+    "qi_team": "QI team"
+  }
+}

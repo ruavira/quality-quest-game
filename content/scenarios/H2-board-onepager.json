@@ -1,0 +1,30 @@
+{
+  "id": "H2-board-onepager",
+  "module": "H",
+  "tier": 2,
+  "lo_id": "H.2.1",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["exec_reporting", "board_narrative", "decision_ask"],
+  "setting_variant": "any",
+  "title": "One chart, one paragraph, one decision",
+  "brief": "You are turning an improving caesarean-section SSI run chart into a one-page {{board}}. The page has one chart (the run chart, with the checklist change annotated) and one short paragraph of commentary. All that remains is the closing **decision-asked** sentence — the single line that tells leadership exactly what you want them to do.\n\nA strong decision-ask names one action (one verb) and one time horizon.",
+  "task": {
+    "stem": "Which closing decision-asked sentence is strongest?",
+    "options": [
+      { "label": "‘The data shows encouraging progress and the team has worked very hard this quarter.’" },
+      { "label": "‘We ask the {{exec}} to endorse continuing the theatre-checklist routine for the next six months, and to review it against this same chart at month 37.’" },
+      { "label": "‘We should probably keep doing what we are doing and maybe look at it again at some point.’" },
+      { "label": "‘We recommend endorsing the checklist, expanding it to two more theatres, hiring an audit clerk, buying a new steriliser, and revising the antibiotic policy.’" }
+    ]
+  },
+  "answer": { "correctIndex": 1 },
+  "debrief": {
+    "correct": "Yes. The **One Chart · One Paragraph · One Decision** structure ends with a decision-asked sentence that has **one verb** (‘endorse’) and **one time horizon** (‘six months, review at month 37’). Leadership knows precisely what is being asked and cannot drift into a generic conversation. The other options fail predictably: the first states progress but asks for nothing; the third is vague with no verb or horizon; the fourth bundles five asks, so the board can approve the easy ones and quietly drop the rest.",
+    "wrong": "A board one-pager exists to produce a decision. The strongest closing line names **one action and one time horizon** — ‘endorse continuing the routine for six months, review at M37.’ A sentence that only praises the team asks for nothing; a vague ‘maybe look again’ has no verb or horizon; a five-part shopping list lets the board cherry-pick. One chart, one paragraph, one decision.",
+    "rule_cited": "One Chart · One Paragraph · One Decision — executive-friendly reporting; communicating data for a decision — Provost & Murray ch. 7; NAHQ HQCF (Professional Engagement).",
+    "citations": ["provost_murray_2nd", "nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

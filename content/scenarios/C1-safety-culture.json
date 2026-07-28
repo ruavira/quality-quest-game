@@ -1,0 +1,43 @@
+{
+  "id": "C1-safety-culture",
+  "module": "C",
+  "tier": 1,
+  "lo_id": "C.1.2",
+  "itemType": "MCQ",
+  "chartType": "bar",
+  "competency_tags": ["safety_culture", "incident_reporting_climate"],
+  "setting_variant": "lower_resource",
+  "title": "Read a safety-culture survey",
+  "brief": "You receive the unit-level safety-culture survey results for the maternity ward at a faith-based district hospital. The bar chart below shows the **percentage of respondents agreeing or strongly agreeing** with each dimension.\n\nThe directorate has asked you to flag which dimension is the most concerning to start a conversation about.",
+  "exhibit": {
+    "kind": "svg-bar",
+    "chartType": "bar",
+    "title": "Safety-culture survey, maternity ward — percent positive by dimension",
+    "items": [
+      { "label": "Teamwork",                  "value": 82, "color": "var(--series-3)" },
+      { "label": "Supervisor support",        "value": 76, "color": "var(--series-3)" },
+      { "label": "Learning from errors",      "value": 71, "color": "var(--series-3)" },
+      { "label": "Communication openness",    "value": 64, "color": "var(--series-2)" },
+      { "label": "Non-punitive response",     "value": 38, "color": "var(--series-6)" },
+      { "label": "Handoffs & transitions",    "value": 69, "color": "var(--series-3)" }
+    ]
+  },
+  "task": {
+    "stem": "Which dimension is most concerning, and what does that suggest about the unit?",
+    "options": [
+      { "label": "Teamwork (82%) — there is room to grow." },
+      { "label": "Handoffs & transitions (69%) — patients move between shifts frequently here." },
+      { "label": "Non-punitive response (38%) — staff likely fear being blamed for errors, which suppresses reporting." },
+      { "label": "Learning from errors (71%) — it is the lowest of the three ‘learning’ dimensions." }
+    ]
+  },
+  "answer": { "correctIndex": 2 },
+  "debrief": {
+    "correct": "Yes. **Non-punitive response** is the lowest-scoring dimension by a wide margin, and a low score here typically means staff fear blame after an error. That fear suppresses incident reporting, which then biases every other safety measure you collect from this ward. It is also a leading indicator: low non-punitive scores often precede a drop in reported events without a real drop in events.",
+    "wrong": "Look for the lowest-scoring dimension. **Non-punitive response (38%)** stands out. A low score here means staff fear being blamed, which suppresses incident reporting — and that biases your other safety data. A culture-of-safety conversation usually starts here, not with teamwork (already high).",
+    "rule_cited": "Safety culture interpretation — WHO PS Curriculum Guide topic 5 (Learning from errors).",
+    "citations": ["who_ps_curriculum", "ahrq_psnet"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

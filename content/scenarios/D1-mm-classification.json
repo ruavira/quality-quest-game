@@ -1,0 +1,30 @@
+{
+  "id": "D1-mm-classification",
+  "module": "D",
+  "tier": 1,
+  "lo_id": "D.1.3",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["mm_review", "case_classification"],
+  "setting_variant": "any",
+  "title": "Classify a case for M&M review",
+  "brief": "Your hospital's Morbidity and Mortality (M&M) committee meets monthly to review adverse events. The committee's criteria for mandatory review are: **(1)** unexpected in-hospital death, **(2)** return to theatre within 30 days of a planned procedure, or **(3)** any complication rated as Severe or higher on the WHO ICPS harm scale.\n\nA 58-year-old man underwent elective hernia repair. On day 3 post-operation he developed a surgical-site infection. He was treated with antibiotics and discharged on day 8. No further complications were recorded.",
+  "task": {
+    "stem": "Should this case be referred for M&M review?",
+    "options": [
+      { "label": "Yes — a surgical-site infection is a complication. Classify harm severity first; refer if it meets the Severe threshold." },
+      { "label": "No — the patient recovered and was discharged; complications that resolve do not meet M&M criteria." },
+      { "label": "Yes — all post-operative complications are automatically referred for M&M review." },
+      { "label": "No — M&M review is only for deaths; this patient survived." }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Correct. A surgical-site infection is a complication, so the next step is to classify its harm severity using the WHO ICPS scale (None / Mild / Moderate / Severe / Death). A day-3 SSI treated with antibiotics, resolved by day 8, is most likely Moderate harm — which does not trigger the mandatory Severe threshold. However, you must classify first; you cannot skip the severity step and assume it is below the threshold. If the committee uses a lower threshold (e.g., Moderate and above), the answer changes — always apply your hospital's defined criteria.",
+    "wrong": "Recovering does not mean a complication is exempt from review. The criteria are not limited to deaths (option D). Not all complications trigger M&M — only those meeting defined harm thresholds (option C is too broad). Option B skips the severity classification step, which is required before deciding. The correct process is: identify complication → classify severity → apply the committee's threshold criteria → refer if met.",
+    "rule_cited": "M&M classification — WHO ICPS harm severity scale; NAHQ HQ Essentials: Peer Review.",
+    "citations": ["who_icps", "nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

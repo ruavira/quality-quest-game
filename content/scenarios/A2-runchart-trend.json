@@ -1,0 +1,43 @@
+{
+  "id": "A2-runchart-trend",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.6",
+  "itemType": "HOT",
+  "chartType": "run",
+  "runChartRule": "trend",
+  "competency_tags": ["run_chart_rules", "signal_vs_noise"],
+  "setting_variant": "lower_resource",
+  "title": "Find the trend signal",
+  "brief": "Your antenatal clinic introduced a phone-reminder system to lift **ANC fourth-visit completion**. The chart shows the last 16 weeks (median = 51%).\n\nUsing Provost & Murray's **trend rule** — five or more consecutive points all going up (or all going down) signal a non-random change — click the points that make up the trend.\n\n(Keyboard users: press Tab to enter the chart, Left/Right arrow to move between points, Enter to select.)",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "ANC fourth-visit completion (%) — weekly",
+    "xLabel": "Week",
+    "yLabel": "ANC-4 completion %",
+    "data": [
+      { "x": "W1",  "y": 44 }, { "x": "W2",  "y": 41 }, { "x": "W3",  "y": 45 },
+      { "x": "W4",  "y": 42 }, { "x": "W5",  "y": 46 }, { "x": "W6",  "y": 43 },
+      { "x": "W7",  "y": 41 }, { "x": "W8",  "y": 48 }, { "x": "W9",  "y": 54 },
+      { "x": "W10", "y": 60 }, { "x": "W11", "y": 66 }, { "x": "W12", "y": 71 },
+      { "x": "W13", "y": 68 }, { "x": "W14", "y": 70 }, { "x": "W15", "y": 69 },
+      { "x": "W16", "y": 70 }
+    ],
+    "median": 51
+  },
+  "task": {
+    "stem": "Click each point that is part of the trend (the run of consecutive points all moving in the same direction). Submit when you have the full trend selected."
+  },
+  "answer": {
+    "indices": [6, 7, 8, 9, 10, 11]
+  },
+  "debrief": {
+    "correct": "Spotted. Weeks 7–12 rise every single week — 41 → 48 → 54 → 60 → 66 → 71 — that is **six** consecutive increasing points, which meets the trend rule (five or more). The run clearly *starts* at week 7 (week 6 → week 7 is a drop) and *ends* at week 12 (week 12 → week 13 falls back). Direction, not level, is the signal: it is the sustained climb that tells you the reminder system is changing the system, not any single week's value.",
+    "wrong": "The trend rule: **five or more consecutive points all going up, or all going down.** Find where the line climbs without interruption — weeks 7 to 12 rise every week (41 → 48 → 54 → 60 → 66 → 71). The pre-run wobble (weeks 1–6) and the plateau after week 12 are not part of the trend. Count the *direction* of each step, not how high the points are.",
+    "rule_cited": "Provost & Murray (2nd ed.) — Trend rule (≥ 5 consecutive points all increasing or all decreasing). Call it at the fifth point; do not wait for the slope to flatten.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

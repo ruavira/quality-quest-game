@@ -1,0 +1,45 @@
+{
+  "id": "E1-jci-ipsg",
+  "module": "E",
+  "tier": 1,
+  "lo_id": "E.1.1",
+  "accrediting_body": "JCI",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["JCI", "patient-identification", "IPSG", "near-miss", "patient-safety"],
+  "setting_variant": "any",
+  "title": "JCI IPSG: Identifying the Breached International Patient Safety Goal",
+  "brief": "A 150-bed private hospital in Nairobi, Kenya is accredited by Joint Commission International (JCI). A patient received a blood transfusion that had been prepared for a different patient. No serious harm resulted, and the near-miss was reported through the incident reporting system. The quality team must document which International Patient Safety Goal (IPSG) was primarily breached.",
+  "task": {
+    "stem": "Which IPSG does this incident primarily relate to?",
+    "options": [
+      {
+        "label": "IPSG 1 — Correctly Identifying Patients. The transfusion was prepared for the wrong patient, indicating a failure of patient identification at the point of specimen collection or at the bedside before administration."
+      },
+      {
+        "label": "IPSG 2 — Improving Effective Communication. A handover communication failure was the root cause, so this is primarily a communication breakdown rather than an identification failure."
+      },
+      {
+        "label": "IPSG 3 — Improving the Safety of High-Alert Medications. Blood products are classified as high-alert items, so any transfusion error is primarily a medication safety incident."
+      },
+      {
+        "label": "IPSG 6 — Reducing the Risk of Patient Harm Resulting from Falls. This goal covers any incident in which a patient could have been harmed during their admission."
+      }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "IPSG 1 requires at least two patient identifiers to be checked at every point of care, including at specimen collection and at the bedside immediately before a transfusion begins. A blood product prepared for the wrong patient is a classic IPSG 1 failure. JCI's six IPSGs are: IPSG 1 Correctly Identifying Patients, IPSG 2 Improving Effective Communication, IPSG 3 Improving the Safety of High-Alert Medications, IPSG 4 Ensuring Correct-Site Correct-Procedure Correct-Patient Surgery, IPSG 5 Reducing the Risk of Healthcare-Associated Infections, and IPSG 6 Reducing the Risk of Patient Harm Resulting from Falls. Transfusion errors due to patient mis-identification are among the most preventable serious adverse events in healthcare.",
+    "wrong": "IPSG 2 covers breakdowns in handover communication — for example, verbal orders or discharge summaries — but the root cause here is failure to verify which patient the blood product belongs to, not a communication gap between staff. IPSG 3 covers high-alert medications such as concentrated electrolytes and anticoagulants; while blood products require careful handling, the error in this case is identification, not medication management. IPSG 6 is specifically about falls prevention and has no connection to a transfusion incident.",
+    "rule_cited": "JCI IPSG 1 requires staff to use at least two patient identifiers when providing care, treatment, or services, including at the point of blood product administration.",
+    "citations": ["jci"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": {
+    "clinical": null,
+    "statistical": null,
+    "instructional": null,
+    "plain_language": null,
+    "context_review_pending": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "F2-frame-collision",
+  "module": "F",
+  "tier": 2,
+  "lo_id": "F.2.2",
+  "itemType": "DEFEND",
+  "chartType": "run",
+  "runChartRule": "shift",
+  "competency_tags": ["frame_collision", "improvement_vs_judgment", "leadership_dashboard"],
+  "setting_variant": "any",
+  "title": "‘Who is responsible for the bad month?’",
+  "brief": "You present a run chart of monthly **caesarean-section surgical site infection (SSI) %** to the {{board_meeting}}. A theatre-checklist change was introduced at M11, and the rate has sat below the median ever since. The {{exec}} points at M2 (one of the high early months) and asks: ‘That month is bad — **who is responsible**?’\n\nThe whole room is now looking at you.",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "Caesarean-section SSI % (monthly) — checklist change at M11",
+    "xLabel": "Month",
+    "yLabel": "SSI %",
+    "data": [
+      { "x": "M1",  "y": 11 }, { "x": "M2",  "y": 12 }, { "x": "M3",  "y": 10 },
+      { "x": "M4",  "y": 9 },  { "x": "M5",  "y": 12 }, { "x": "M6",  "y": 10 },
+      { "x": "M7",  "y": 11 }, { "x": "M8",  "y": 9 },  { "x": "M9",  "y": 10 },
+      { "x": "M10", "y": 12 },
+      { "x": "M11", "y": 5 },  { "x": "M12", "y": 4 },  { "x": "M13", "y": 3 },
+      { "x": "M14", "y": 5 },  { "x": "M15", "y": 4 },  { "x": "M16", "y": 3 },
+      { "x": "M17", "y": 4 },  { "x": "M18", "y": 5 },  { "x": "M19", "y": 4 },
+      { "x": "M20", "y": 3 }
+    ],
+    "median": 7
+  },
+  "task": {
+    "stem": "How do you respond to the {{exec}}?",
+    "options": [
+      { "label": "Name the staff on duty in M2 and add the month to their performance appraisal." },
+      { "label": "Reframe: ask whether the chart is being used to improve the process or to judge the unit, then point to the sustained shift below the median since the M11 change." },
+      { "label": "Delete the pre-change months so only the good data is shown to the board." },
+      { "label": "Add a red / amber / green rating to every month so the board can grade performance at a glance." }
+    ],
+    "reasonStem": "Why?",
+    "reasons": [
+      { "label": "Because improvement data (plotted over time, owned by the team, used to learn) and judgment data (a snapshot used to hold a unit to account) answer different questions; using an improvement chart to assign blame is a frame collision that kills learning." },
+      { "label": "Because the board owns the meeting and its accountability questions must always be answered directly." },
+      { "label": "Because one month above the median is a special-cause signal that requires naming the responsible individual." },
+      { "label": "Because run charts should never be shown in governance meetings." }
+    ]
+  },
+  "answer": {
+    "correctIndex": 1,
+    "correctReasonIndex": 0
+  },
+  "debrief": {
+    "correct": "Well handled. This is a **frame collision**: an improvement chart pulled into a judgment conversation. Solberg's three faces of measurement — improvement, judgment/accountability, and research — answer different questions, and one number cannot serve all three at once. M2 is not a special-cause signal to pin on a person; the real story is the **shift** — ten consecutive months below the median since the M11 checklist change. The reframe (‘are we using this to improve the process or to judge the unit?’) redirects the room from blame to learning, and then you tell the improvement story.",
+    "wrong": "Naming names, hiding data, or traffic-lighting the chart all deepen the **judgment frame** and destroy the learning the chart was built for. This is a **frame collision** — improvement data used to grade a unit. Solberg's three faces (improvement vs judgment vs research) are distinct purposes. Name the frame first (‘improve the process, or judge the unit?’), then point to the signal that matters: a sustained shift below the median since M11.",
+    "rule_cited": "Solberg's three faces of performance measurement (improvement / judgment / research); frame collision — Solberg LI, Mosser G, McDonald S. Jt Comm J Qual Improv. 1997;23(3):135–47; NAHQ HQCF.",
+    "citations": ["solberg_1997", "provost_murray_2nd", "nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

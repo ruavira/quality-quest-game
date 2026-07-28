@@ -1,0 +1,39 @@
+{
+  "id": "C3-just-culture",
+  "module": "C",
+  "tier": 3,
+  "lo_id": "C.3.1",
+  "itemType": "DEFEND",
+  "chartType": "none",
+  "runChartRule": null,
+  "competency_tags": ["just_culture", "incident_analysis", "patient_safety"],
+  "setting_variant": "any",
+  "title": "Just Culture — classify the behaviour",
+  "brief": "Sister Amaka is a registered nurse on a busy medical ward. The ward protocol requires **two-person identity verification** before administering any oral medication — one nurse prepares the doses, a second independently confirms the patient's name and wristband before the patient swallows the tablets.\n\nOn Tuesday morning, Sister Amaka is preparing medications when a colleague calls urgently for help with a drip. She hands the dose cup to the patient and says “Please take these tablets” without performing the second identity check. An incident report filed later shows that the patient received medication intended for the patient in the next bed. The other patient noticed the tablets looked different and did not take them — no harm resulted.\n\nSister Amaka tells the safety officer: “I know we’re supposed to do the two-check, but when you’ve been on this ward for three years and know every patient, it really just adds time. I skip it when we are busy.”\n\nThe **Just Culture framework** (Marx, 2001) classifies behaviours as:\n- **Human error** — an inadvertent, unintended act; the person did not choose to deviate\n- **At-risk behaviour** — a conscious choice to deviate from a safe practice, without recognising the risk; the person normalised the shortcut\n- **Reckless behaviour** — conscious disregard of a substantial and unjustifiable risk",
+  "task": {
+    "stem": "Using the Just Culture framework, how should Sister Amaka's behaviour be classified?",
+    "options": [
+      { "label": "Human error — she made an inadvertent slip when distracted by the colleague's call" },
+      { "label": "At-risk behaviour — she made a repeated, conscious choice to bypass a safety step she considered unnecessary, without recognising the risk" },
+      { "label": "Reckless behaviour — she consciously disregarded a known and substantial risk to the patient" }
+    ],
+    "reasonStem": "What is the strongest reason for that classification?",
+    "reasons": [
+      { "label": "The protocol violation was unintentional — she was interrupted and forgot to complete the check this one time" },
+      { "label": "She routinely skipped the step because she believed it added no value, normalising a deviation without understanding the risk it created" },
+      { "label": "She knew skipping the check was dangerous but chose convenience over patient safety" }
+    ]
+  },
+  "answer": {
+    "correctIndex": 1,
+    "correctReasonIndex": 1
+  },
+  "debrief": {
+    "correct": "Correct — **at-risk behaviour**. Sister Amaka's statement reveals a pattern: she skips the step routinely when busy because she perceives it as unnecessary overhead. That is not a slip (human error) — it is a habitual, conscious choice. However, it is not reckless: she does not appear to recognise that the two-check prevents a real class of errors. She has normalised the deviation. The Just Culture response to at-risk behaviour is not punishment — it is understanding why the shortcut was attractive (workload, perceived low risk) and redesigning the system so the safe path is also the easy path.",
+    "wrong": "Review the three categories. **Human error** requires the deviation to be unintentional — Sister Amaka's statement ('I skip it when we are busy') confirms this is a deliberate, repeated choice, not a slip. **Reckless behaviour** requires her to consciously recognise and disregard the risk — her statement suggests she did not believe the risk was real ('when you know every patient'). That leaves **at-risk behaviour**: a conscious shortcut taken without appreciating the hazard. The Just Culture response is coaching and system redesign, not punitive action.",
+    "rule_cited": "Just Culture framework — Marx (2001): human error, at-risk behaviour, reckless behaviour.",
+    "citations": ["marx_just_culture", "who_ps_curriculum", "ahrq_psnet"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

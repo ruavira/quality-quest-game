@@ -1,0 +1,47 @@
+{
+  "id": "A2-opdef",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.3",
+  "itemType": "BUILD",
+  "chartType": "none",
+  "competency_tags": ["operational_definitions"],
+  "setting_variant": "any",
+  "title": "Build an operational definition",
+  "brief": "Your team has agreed the next measure: **proportion of post-partum mothers screened for depression before discharge**. Before you start collecting data, build the operational definition that an auditor at the next ward could read and reproduce.\n\nFill in each field. The system will accept reasonable phrasings — what matters is that each component is named and bounded.",
+  "task": {
+    "stem": "Build the operational definition.",
+    "fields": [
+      { "id": "numerator",          "label": "Numerator (what counts as a screened mother?)",
+        "placeholder": "e.g., mothers with a completed EPDS or PHQ-9 form before discharge…" },
+      { "id": "denominator",        "label": "Denominator (who is in the eligible population?)",
+        "placeholder": "e.g., all post-partum mothers discharged from the maternity ward…" },
+      { "id": "inclusions",         "label": "Inclusions",
+        "placeholder": "e.g., includes singleton and multiple births, vaginal and caesarean…" },
+      { "id": "exclusions",         "label": "Exclusions",
+        "placeholder": "e.g., excludes mothers whose baby died before discharge, mothers leaving against advice…" },
+      { "id": "data_source",        "label": "Data source",
+        "placeholder": "e.g., paper post-partum register; cross-checked with discharge folder…" },
+      { "id": "measurement_window", "label": "Measurement window",
+        "placeholder": "e.g., monthly; period = first to last day of calendar month…" }
+    ]
+  },
+  "answer": {
+    "fields": {
+      "numerator":          { "keywords": ["screen"] },
+      "denominator":        { "keywords": ["post", "discharg"] },
+      "inclusions":         { "keywords": ["includ"] },
+      "exclusions":         { "keywords": ["exclud"] },
+      "data_source":        { "keywords": ["register", "record", "chart", "form", "hmis", "dhis"] },
+      "measurement_window": { "keywords": ["month", "week", "quarter", "day"] }
+    }
+  },
+  "debrief": {
+    "correct": "A working operational definition has six components: numerator, denominator, inclusions, exclusions, data source, and measurement window. Once those are named, two auditors in different wards should be able to count the same way. The most common mistakes: writing the numerator as ‘screening rate’ (that is the measure, not the numerator), forgetting exclusions, or leaving the data source vague.",
+    "wrong": "Re-check that each field actually names a component: the **numerator** is the count of screened mothers (not the rate itself); the **denominator** is the eligible population (post-partum discharges); **inclusions** and **exclusions** bound the eligible population; **data source** names the register, chart, or system (e.g., HMIS / DHIS2); **measurement window** is the period (e.g., monthly).",
+    "rule_cited": "Operational definitions — IHI QI 102, Provost & Murray ch. 3.",
+    "citations": ["ihi_qi_102", "provost_murray_2nd", "nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

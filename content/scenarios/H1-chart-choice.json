@@ -1,0 +1,30 @@
+{
+  "id": "H1-chart-choice",
+  "module": "H",
+  "tier": 1,
+  "lo_id": "H.1.1",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["chart_choice_for_audience", "data_visualisation"],
+  "setting_variant": "any",
+  "title": "Pick the right chart for the audience",
+  "brief": "You have to present the same data three times this month: to the ward team in their handover (15 minutes, mostly nurses), to the directorate at the {{board_meeting}} (5 minutes, executives), and as a written brief for the regulator.\n\nThe data is the monthly proportion of surgical patients receiving the prophylactic-antibiotic-on-time bundle, over the past 18 months.",
+  "task": {
+    "stem": "Which approach is best for the **directorate at the quarterly governance / board meeting**?",
+    "options": [
+      { "label": "Show the full p-chart with control limits, annotate the special-cause point, and explain ‘we saw a special-cause signal in March; the team identified delayed pharmacy delivery, fixed it; we’d like resources to embed the fix.’" },
+      { "label": "Show eighteen raw data values in a table with three decimal places of precision." },
+      { "label": "Show a pie chart of the three reasons antibiotics were late." },
+      { "label": "Show the median value across all 18 months as a single number with no chart." }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Yes. Executives need to see (a) whether the system has changed (the chart), (b) whether anyone is acting on the change (the annotation), and (c) what they can decide on (the ask). A p-chart with one clear story and one ask is the canonical board-ready visualisation.",
+    "wrong": "Audience drives the visual. A table of 18 raw values reads as noise to an executive in five minutes. A pie chart loses the time dimension. A single median number hides whether anything is improving. A p-chart with the signal annotated and a clear ask carries the story and earns the time you have.",
+    "rule_cited": "Visual choice by audience — Provost & Murray ch. 7; IHI QI 104.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

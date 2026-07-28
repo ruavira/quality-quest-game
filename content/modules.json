@@ -1,0 +1,16 @@
+{
+  "schema": "qq-modules@1",
+  "modules": [
+    { "id": "A", "label": "Reading the Data",          "domain": "Health Data Analytics",            "tag": "data" },
+    { "id": "B", "label": "Using the Data",            "domain": "Performance & Process Improvement","tag": "improvement" },
+    { "id": "C", "label": "Reading Safety Data",       "domain": "Patient Safety (read-only at MVP)","tag": "safety" },
+    { "id": "F", "label": "Leading with Data",         "domain": "Quality Leadership & Integration", "tag": "leadership" },
+    { "id": "G", "label": "Population & Equity Data",  "domain": "Population Health & Equity",       "tag": "equity" },
+    { "id": "H", "label": "Communicating Data",        "domain": "Professional Engagement",          "tag": "communication" }
+  ],
+  "tiers": [
+    { "id": 1, "label": "Apprentice"   },
+    { "id": 2, "label": "Practitioner" },
+    { "id": 3, "label": "Architect"    }
+  ]
+}

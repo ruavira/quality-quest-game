@@ -1,0 +1,50 @@
+{
+  "id": "C3-safety-events",
+  "module": "C",
+  "tier": 3,
+  "lo_id": "C.3.2",
+  "itemType": "BRANCH",
+  "chartType": "none",
+  "runChartRule": null,
+  "competency_tags": ["safety_event_management", "reporting_cycle", "patient_safety"],
+  "setting_variant": "lower_resource",
+  "title": "Safety event management — trace the reporting gap",
+  "brief": "The safety event management cycle has five stages: **(1) Detection** — recognising a near-miss or adverse event; **(2) Reporting** — submitting the incident to the designated person or system; **(3) Triage and escalation** — the safety officer classifying severity and notifying the appropriate committee; **(4) Review and learning** — the safety committee analysing the event and agreeing on corrective actions; **(5) Feedback and closure** — communicating findings and changes back to the staff who reported.\n\nYou are the newly appointed quality officer at Bwindi Community Hospital. Work through three decisions about a recent near-miss.",
+  "task": {
+    "branches": [
+      {
+        "stem": "A nurse discovers she has just dispensed an amoxicillin suspension at a dose 10× higher than prescribed. She catches it before the child swallows it. What should she do FIRST in the safety event management cycle?",
+        "options": [
+          { "label": "File an incident report to the patient safety officer before the end of her shift.", "correct": true },
+          { "label": "Call the prescribing doctor immediately to discuss the prescription.", "correct": false },
+          { "label": "Document only the final patient outcome in the clinical notes, since no harm occurred.", "correct": false }
+        ]
+      },
+      {
+        "stem": "The nurse files the report. You receive it and classify it as a near-miss with potential for severe harm. Three weeks later you check the safety committee meeting minutes — the report was never discussed, because you forgot to forward it. Which stage of the reporting cycle broke down?",
+        "options": [
+          { "label": "Detection — the nurse did not recognise the event correctly.", "correct": false },
+          { "label": "Triage and escalation — the safety officer (you) failed to forward the classified report to the committee.", "correct": true },
+          { "label": "Review and learning — the committee chose not to review this type of event.", "correct": false }
+        ]
+      },
+      {
+        "stem": "You forward the report. The committee reviews it and recommends a new 'double-check before dispensing liquid doses' policy. The policy is printed and filed. Six months later the nurse who filed the original report has never heard the outcome. Which stage is now missing?",
+        "options": [
+          { "label": "Triage — the original severity classification needs to be updated.", "correct": false },
+          { "label": "Review — the committee needs to reconvene and strengthen the recommendation.", "correct": false },
+          { "label": "Feedback and closure — the reporter and frontline staff never received the outcome, so the learning loop is incomplete.", "correct": true }
+        ]
+      }
+    ]
+  },
+  "answer": {},
+  "debrief": {
+    "correct": "Well navigated. The reporting cycle only produces learning when all five stages complete: the near-miss is **detected** and **reported** before the end of the shift (even for no-harm events — the near-miss is data); the safety officer **triages and escalates** to the committee without delay; the committee **reviews** and agrees on corrective action; and critically, staff receive **feedback** — the learning loop closure stage. The last stage is the most commonly missed. When reporters never hear the outcome, reporting rates fall: staff conclude 'nothing changes,' so incidents go unreported.",
+    "wrong": "Review the five stages: Detection → Reporting → Triage & escalation → Review & learning → Feedback & closure. Work through each branch: the first error was a failure to escalate (stage 3), not a detection or reporting failure. The final gap is stage 5 — feedback — because the nurse and her colleagues never learned what changed as a result of their report.",
+    "rule_cited": "Safety event management cycle: five stages ending in feedback and learning loop closure. WHO Patient Safety Curriculum, Topic 6.",
+    "citations": ["who_ps_curriculum", "ihi_ps_101", "ahrq_psnet"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

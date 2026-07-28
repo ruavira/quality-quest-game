@@ -1,0 +1,44 @@
+{
+  "id": "C3-human-factors",
+  "module": "C",
+  "tier": 3,
+  "lo_id": "C.3.3",
+  "itemType": "MATCH",
+  "chartType": "none",
+  "runChartRule": null,
+  "competency_tags": ["human_factors", "systems_thinking", "latent_failure"],
+  "setting_variant": "lower_resource",
+  "title": "Swiss Cheese — latent vs active failures",
+  "brief": "James Reason's **Swiss Cheese model** explains how serious incidents occur when multiple system defences fail simultaneously. It distinguishes two types of failure:\n\n- **Latent failures** — pre-existing weaknesses hidden within the system (the 'holes' in the cheese slices): absent policies, poor design, inadequate training, or faulty equipment. Latent failures create conditions where harm becomes possible.\n- **Active failures** — the unsafe acts of individuals at the sharp end of care: slips, lapses, mistakes, or deliberate shortcuts. Active failures are the immediate trigger, but they occur because latent conditions allowed them.\n\n**Case:** A community health worker (CHW) is conducting a contraceptive outreach day at a remote village. She administers an injectable contraceptive at twice the correct dose. The patient reports prolonged side-effects two weeks later.",
+  "task": {
+    "stem": "Match each factor identified in the incident review to its correct type: latent failure or active failure.",
+    "items": [
+      { "id": "f1", "label": "The CHW drew up the dose from memory rather than measuring against a reference card." },
+      { "id": "f2", "label": "The supervising nurse did not visually check the prepared injection before the CHW administered it." },
+      { "id": "f3", "label": "No dose reference card was available at the outreach site — they were kept at the base clinic." },
+      { "id": "f4", "label": "Two concentrations of the same injectable contraceptive were stored together in one bag without separate labels." },
+      { "id": "f5", "label": "The CHW had received no refresher training on contraceptive dosing protocols in the 18 months since her induction." }
+    ],
+    "categories": [
+      { "id": "active",  "label": "Active failure — an immediate unsafe act by an individual at the point of care" },
+      { "id": "latent",  "label": "Latent failure — a pre-existing system weakness that created the conditions for harm" }
+    ]
+  },
+  "answer": {
+    "pairs": {
+      "f1": "active",
+      "f2": "active",
+      "f3": "latent",
+      "f4": "latent",
+      "f5": "latent"
+    }
+  },
+  "debrief": {
+    "correct": "Correct. **Active failures** are what the individuals did in the moment: the CHW's undocumented dose draw-up and the supervisor's failure to check. These are the 'sharp end' acts that directly preceded the harm. **Latent failures** are the system gaps that made those acts more likely and removed the safety nets: no reference card at the outreach site (missing safeguard), two concentrations stored without labelling (poor physical design), and 18 months without a dosing refresher (training system gap). The Swiss Cheese insight is this: focusing only on the CHW's active failure ('she should have measured correctly') will not prevent recurrence — the latent holes will still be there for the next incident. Lasting safety improvement requires closing the latent gaps.",
+    "wrong": "Review the distinction. **Active failures** are acts that the individual took (or failed to take) in real time at the moment of care — here, dosing from memory and the missed supervision check. **Latent failures** are pre-existing conditions in the system that enabled those acts — no reference card, poor storage labelling, absent refresher training. A common error is classifying 'the supervisor didn't check' as a latent failure because 'supervision is a system issue' — but the supervision step existed; the supervisor individually chose not to perform it in that moment, making it an active failure.",
+    "rule_cited": "Reason's Swiss Cheese model — latent vs active failures. Reason J (1997), Managing the Risks of Organizational Accidents.",
+    "citations": ["reason_accident", "who_ps_curriculum", "vincent_ps"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

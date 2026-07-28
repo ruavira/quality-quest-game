@@ -1,0 +1,30 @@
+{
+  "id": "A1-median-on-line",
+  "module": "A",
+  "tier": 1,
+  "lo_id": "A.1.5",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["run_chart_rules", "signal_vs_noise"],
+  "setting_variant": "any",
+  "title": "Points that land on the median",
+  "brief": "You are counting a run for the shift rule (six or more consecutive points on one side of the median). As you count along, you reach a point whose value is **exactly equal to the median**.\n\nHow should you treat it?",
+  "task": {
+    "stem": "How do you treat a point that lands exactly on the median when counting a shift?",
+    "options": [
+      { "label": "Count it as above the median." },
+      { "label": "Count it as below the median." },
+      { "label": "Skip it — points on the median don't count toward the run, and they don't reset it." },
+      { "label": "Start the count over from that point." }
+    ]
+  },
+  "answer": { "correctIndex": 2 },
+  "debrief": {
+    "correct": "Correct. A point sitting **exactly on the median** is neither above nor below, so you **skip it** — it does not add to the run, and it does not break or reset it. You simply carry on counting the points either side. Treating on-median points as above or below (or restarting the count) is a common way people miscount a shift.",
+    "wrong": "A point exactly on the median is neither above nor below it, so it can't count toward a run on either side. The convention is to **skip it** — it doesn't add to the run and doesn't reset it; you keep counting the points that are clearly above or below. This is why the median (not the mean) is used and why 'points on the line' need a rule of their own.",
+    "rule_cited": "Counting runs and shifts — points on the median are excluded — Provost & Murray (2nd ed.), IHI QI 104.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "B1-measure-classification",
+  "module": "B",
+  "tier": 1,
+  "lo_id": "B.1.1",
+  "itemType": "MATCH",
+  "chartType": "none",
+  "competency_tags": ["family_of_measures"],
+  "setting_variant": "any",
+  "title": "Outcome, process, or balancing?",
+  "brief": "A primary care team has set the aim: ‘Reduce the proportion of children under five who leave the clinic without their complete vaccination card updated, from 30% to under 10% within six months.’\n\nA balanced family of measures usually has 1–2 outcome measures, 3–5 process measures, and 1–2 balancing measures. Match each candidate measure to its type.",
+  "task": {
+    "stem": "Match each candidate measure to its role in the family.",
+    "items": [
+      { "id": "o1", "label": "Proportion of under-five children leaving the clinic without an updated vaccination card." },
+      { "id": "p1", "label": "Proportion of visits where the vaccination card is checked at intake." },
+      { "id": "p2", "label": "Average minutes from arrival to vaccination card review." },
+      { "id": "b1", "label": "Average waiting time per visit (to ensure the new step does not lengthen visits unduly)." }
+    ],
+    "categories": [
+      { "id": "outcome",   "label": "Outcome measure"   },
+      { "id": "process",   "label": "Process measure"   },
+      { "id": "balancing", "label": "Balancing measure" }
+    ]
+  },
+  "answer": {
+    "pairs": { "o1": "outcome", "p1": "process", "p2": "process", "b1": "balancing" }
+  },
+  "debrief": {
+    "correct": "Good. The aim names the outcome (cards updated). Process measures look at how the system performs (cards checked at intake, time to review). Balancing measures watch for unintended consequences elsewhere — here, total waiting time.",
+    "wrong": "Trace each measure back to the aim. Outcome = what we ultimately want to change (cards updated). Process = how the system is performing (cards checked, time to review). Balancing = what else might get worse if we focus only on the aim (waiting time).",
+    "rule_cited": "Family of measures — IHI Model for Improvement (QI 102 / QI 103).",
+    "citations": ["ihi_qi_102", "ihi_qi_103", "provost_murray_2nd"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

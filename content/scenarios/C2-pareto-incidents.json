@@ -1,0 +1,44 @@
+{
+  "id": "C2-pareto-incidents",
+  "module": "C",
+  "tier": 2,
+  "lo_id": "C.2.1",
+  "itemType": "MCQ",
+  "chartType": "pareto",
+  "competency_tags": ["pareto_analysis", "incident_classification"],
+  "setting_variant": "any",
+  "title": "Reading a Pareto of incident types",
+  "brief": "The patient-safety officer has classified the past quarter’s 138 reported incidents on the medical wards into the categories below. They want help deciding what the safety committee should focus on first.\n\nUse the Pareto chart to identify the smallest set of categories that together account for the bulk of incidents.",
+  "exhibit": {
+    "kind": "svg-pareto",
+    "chartType": "pareto",
+    "title": "Incident reports by category, medical wards, past quarter (n=138)",
+    "items": [
+      { "label": "Falls",                 "value": 48 },
+      { "label": "Medication errors",     "value": 36 },
+      { "label": "Pressure injuries",     "value": 18 },
+      { "label": "IV / line issues",      "value": 14 },
+      { "label": "Communication",         "value": 10 },
+      { "label": "Documentation",         "value": 7 },
+      { "label": "Other",                 "value": 5 }
+    ]
+  },
+  "task": {
+    "stem": "What does this Pareto tell you to do first?",
+    "options": [
+      { "label": "Investigate every category equally — they are all incident reports." },
+      { "label": "Start a focused effort on falls and medication errors, which together account for about 60% of reports; design improvements at the system level, not for individual staff." },
+      { "label": "Wait for the next quarter — three months is too short to draw conclusions from any Pareto." },
+      { "label": "Reclassify everything as ‘Other’ because the categories overlap." }
+    ]
+  },
+  "answer": { "correctIndex": 1 },
+  "debrief": {
+    "correct": "Yes. A Pareto is a way of saying ‘not everything is equal — start where the volume is.’ Here falls (48) and medication errors (36) are 84 of 138 reports — about 61% of the load. A safety committee that designs system-level improvements for those two categories does more good than one that distributes its attention evenly across seven categories. (And yes, three months can be enough to act if your reporting culture is mature; if it isn’t, work on the reporting culture first.)",
+    "wrong": "A Pareto chart focuses scarce attention. The cumulative line shows that falls + medication errors together account for roughly 61% of all reports. Designing system-level improvements for those two categories has more impact than spreading effort evenly across seven. Categories with very small counts (Documentation, Other) can wait.",
+    "rule_cited": "Pareto principle in QI — Provost & Murray ch. 8; WHO PS Curriculum topic 6.",
+    "citations": ["provost_murray_2nd", "who_ps_curriculum"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

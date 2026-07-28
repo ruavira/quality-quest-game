@@ -1,0 +1,42 @@
+{
+  "id": "A2-runchart-astronomical",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.7",
+  "itemType": "HOT",
+  "chartType": "run",
+  "runChartRule": "astronomical",
+  "competency_tags": ["run_chart_rules", "signal_vs_noise"],
+  "setting_variant": "any",
+  "title": "Find the astronomical point",
+  "brief": "The ward tracks **medication administration errors per 1,000 doses**, monthly (median = 5). One month stands out. The rota that month leaned heavily on locum staff.\n\nUsing Provost & Murray's **astronomical-point rule** — one point that is obviously, strikingly different from all the others — click the single point that is the signal.\n\n(Keyboard users: press Tab to enter the chart, Left/Right arrow to move between points, Enter to select.)",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "Medication administration errors per 1,000 doses — monthly",
+    "xLabel": "Month",
+    "yLabel": "Errors per 1,000 doses",
+    "data": [
+      { "x": "M1",  "y": 5 },  { "x": "M2",  "y": 4 },  { "x": "M3",  "y": 6 },
+      { "x": "M4",  "y": 5 },  { "x": "M5",  "y": 4 },  { "x": "M6",  "y": 5 },
+      { "x": "M7",  "y": 6 },  { "x": "M8",  "y": 4 },  { "x": "M9",  "y": 5 },
+      { "x": "M10", "y": 19 }, { "x": "M11", "y": 5 },  { "x": "M12", "y": 4 },
+      { "x": "M13", "y": 6 },  { "x": "M14", "y": 5 }
+    ],
+    "median": 5
+  },
+  "task": {
+    "stem": "Click the single point that is the astronomical-point signal. Submit when it is selected."
+  },
+  "answer": {
+    "indices": [9]
+  },
+  "debrief": {
+    "correct": "That's the one. Month 10 reads 19 per 1,000 doses against a median of 5 — nearly **four times** the usual level and far outside the ordinary month-to-month band (4–6). One point that obviously different is an **astronomical point**, and it fires on its own — you do not need a run around it. Crucially, it points you to **investigate that specific month** (the locum-heavy rota), not to conclude the whole system has deteriorated. Fix the assignable cause; don't tamper with a system that is otherwise stable.",
+    "wrong": "The astronomical-point rule is the eyeball test: **one point strikingly different from all the rest.** Every month sits in a tight 4–6 band except month 10, which jumps to 19 — about four times the median of 5. That single point is the signal. It tells you to investigate *what was different that month* (here, a locum-heavy rota), not to overhaul a system that is otherwise in control.",
+    "rule_cited": "Provost & Murray (2nd ed.) — Astronomical-point rule (one point obviously different from the others); investigate the special cause, do not tamper with the stable system.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

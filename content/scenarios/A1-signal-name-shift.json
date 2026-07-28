@@ -1,0 +1,45 @@
+{
+  "id": "A1-signal-name-shift",
+  "module": "A",
+  "tier": 1,
+  "lo_id": "A.1.3",
+  "itemType": "MCQ",
+  "chartType": "run",
+  "runChartRule": "shift",
+  "competency_tags": ["run_chart_rules", "signal_vs_noise"],
+  "setting_variant": "any",
+  "title": "Name the signal — hand hygiene",
+  "brief": "Your ward launched a hand-hygiene campaign after week 8. The chart shows weekly hand-hygiene compliance (%) over 16 weeks, with the median drawn as a dashed line.\n\nApply the four run-chart signals and name the one you see.",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "Hand-hygiene compliance (%) — weekly",
+    "xLabel": "Week",
+    "yLabel": "Compliance %",
+    "data": [
+      { "x": "W1", "y": 58 }, { "x": "W2", "y": 55 }, { "x": "W3", "y": 60 }, { "x": "W4", "y": 57 },
+      { "x": "W5", "y": 62 }, { "x": "W6", "y": 56 }, { "x": "W7", "y": 59 }, { "x": "W8", "y": 58 },
+      { "x": "W9", "y": 74 }, { "x": "W10", "y": 77 }, { "x": "W11", "y": 72 }, { "x": "W12", "y": 78 },
+      { "x": "W13", "y": 75 }, { "x": "W14", "y": 80 }, { "x": "W15", "y": 73 }, { "x": "W16", "y": 76 }
+    ],
+    "median": 67
+  },
+  "task": {
+    "stem": "Which run-chart signal does this chart show?",
+    "options": [
+      { "label": "A shift — a run of six or more points on one side of the median." },
+      { "label": "A trend — five or more points all climbing or all falling." },
+      { "label": "An astronomical point — one point strikingly different from the rest." },
+      { "label": "No signal — just ordinary variation." }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "Yes — a **shift**. From week 9 onward, eight consecutive points sit above the median (67%), well past the threshold of six. The single jump between week 8 and week 9 is not a trend (a trend needs five consecutive steps in one direction), and no point is astronomically far from the rest. A shift up in a 'good' measure like compliance is improvement — and it is holding.",
+    "wrong": "Count the points on one side of the median. From week 9, eight weeks in a row sit above the median (67%) — that is a **shift** (six or more consecutive on one side). It is not a trend (no run of five consecutive *steps* up or down) and there is no single astronomical outlier.",
+    "rule_cited": "Shift rule — Provost & Murray (2nd ed.), IHI QI 104.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

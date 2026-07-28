@@ -1,0 +1,33 @@
+{
+  "id": "B1-pdsa-order",
+  "module": "B",
+  "tier": 1,
+  "lo_id": "B.1.2",
+  "itemType": "ORDER",
+  "chartType": "none",
+  "competency_tags": ["pdsa_cycle"],
+  "setting_variant": "any",
+  "title": "Order one PDSA cycle",
+  "brief": "Your team is planning a small test of change: have the triage nurse give every walk-in patient a printed wait-time estimate at registration. You want to test it Tuesday morning with two nurses and twenty patients.\n\nPut these steps in the order a PDSA cycle should follow them.",
+  "task": {
+    "stem": "Drag the steps into the correct order.",
+    "steps": [
+      { "id": "plan_predict",   "label": "Predict: ‘We expect 80% of patients to receive an estimate, and that giving estimates will not delay registration.’" },
+      { "id": "plan_design",    "label": "Plan: ‘Tuesday 8–11 a.m. Two nurses. Twenty patients. Estimates printed from the queue board.’" },
+      { "id": "do",             "label": "Do: Run the test on Tuesday morning; one observer notes what happens and what is missed." },
+      { "id": "study",          "label": "Study: Compare the prediction (80% receive an estimate) with the observation (15 of 20 did)." },
+      { "id": "act",            "label": "Act: Decide to adopt, adapt (e.g. add a back-up estimate stamp), or abandon — and what to test next." }
+    ]
+  },
+  "answer": {
+    "order": ["plan_predict", "plan_design", "do", "study", "act"]
+  },
+  "debrief": {
+    "correct": "Yes. A useful PDSA cycle starts with a clear **prediction** (what you expect to happen), then a tight **plan** (who, when, how much), then a short **Do**, a **Study** that compares prediction to observation, and an **Act** that decides whether to adopt, adapt, or abandon. Skipping the prediction is the single most common cause of weak PDSA cycles.",
+    "wrong": "A PDSA cycle without an upfront **prediction** is just an audit. The order is: Predict, Plan, Do, Study, Act. The prediction is what makes the Study step meaningful: you are comparing what you expected to what actually happened.",
+    "rule_cited": "PDSA cycle — IHI Model for Improvement (QI 103).",
+    "citations": ["ihi_qi_103", "ihi_qi_102", "provost_murray_2nd"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

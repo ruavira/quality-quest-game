@@ -1,0 +1,46 @@
+{
+  "id": "B2-fom",
+  "module": "B",
+  "tier": 2,
+  "lo_id": "B.2.1",
+  "itemType": "MATCH",
+  "chartType": "none",
+  "competency_tags": ["family_of_measures", "aim_to_measure"],
+  "setting_variant": "lower_resource",
+  "title": "Build a balanced family of measures",
+  "brief": "Aim: **‘Reduce stockouts of essential medicines (per the national EML) at our six PHC clinics, from an average of 8 days per clinic per month to under 2 days per clinic per month, within six months.’**\n\nYou have six candidate measures. Choose a balanced family: ideally one or two outcome measures, three to five process measures, and one or two balancing measures.",
+  "task": {
+    "stem": "Tag each candidate measure.",
+    "items": [
+      { "id": "m1", "label": "Average stockout-days per clinic per month for essential medicines." },
+      { "id": "m2", "label": "Proportion of weekly stock counts completed on time." },
+      { "id": "m3", "label": "Proportion of clinics with a re-order point set and visible on each medicine shelf." },
+      { "id": "m4", "label": "Days from re-order trigger to receipt of medicines at the clinic." },
+      { "id": "m5", "label": "Number of expired medicines discarded per clinic per month (watching that we don’t over-order)." },
+      { "id": "m6", "label": "Patient-reported satisfaction with availability of prescribed medicines (post-visit survey)." }
+    ],
+    "categories": [
+      { "id": "outcome",   "label": "Outcome measure"   },
+      { "id": "process",   "label": "Process measure"   },
+      { "id": "balancing", "label": "Balancing measure" }
+    ]
+  },
+  "answer": {
+    "pairs": {
+      "m1": "outcome",
+      "m2": "process",
+      "m3": "process",
+      "m4": "process",
+      "m5": "balancing",
+      "m6": "outcome"
+    }
+  },
+  "debrief": {
+    "correct": "Good. **Outcome** measures sit closest to the aim and to the patient (stockout-days; patient-reported satisfaction). **Process** measures track whether the work that drives outcomes is happening (weekly counts, re-order points, re-supply lead time). **Balancing** measures watch for unintended consequences — here, that pushing harder on stock-on-hand might cause over-ordering and waste from expiry. A balanced family avoids the common trap of measuring only one process (e.g., on-time counts) and declaring success when the outcome hasn’t moved.",
+    "wrong": "Trace each candidate back to the aim. Outcomes: stockout-days, patient satisfaction with availability. Processes: counts on time, re-order points set, re-supply lead time. Balancing: expired-medicines discarded (the thing that might worsen if we over-correct).",
+    "rule_cited": "Family of measures — IHI Model for Improvement (QI 102).",
+    "citations": ["ihi_qi_102", "ihi_qi_103", "provost_murray_2nd"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

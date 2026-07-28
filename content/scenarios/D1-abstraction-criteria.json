@@ -1,0 +1,100 @@
+{
+  "id": "D1-abstraction-criteria",
+  "module": "D",
+  "tier": 1,
+  "lo_id": "D.1.1",
+  "itemType": "BUILD",
+  "chartType": "none",
+  "competency_tags": ["chart_abstraction", "measure_compliance"],
+  "setting_variant": "lower_resource",
+  "title": "Abstract a prophylactic antibiotic record",
+  "brief": "Your hospital is auditing compliance with the prophylactic antibiotic measure for surgical patients. The measure criterion is: **a prophylactic antibiotic must be documented as given within 60 minutes before the skin incision.**\n\nReview the patient record below. Then complete the abstraction form.",
+  "task": {
+    "buildType": "chart_abstraction",
+    "stem": "Complete the abstraction form using the patient record above.",
+    "record": {
+      "title": "Patient Record — Case #D-14 · General Surgery Ward",
+      "sections": [
+        {
+          "heading": "Admission & procedure",
+          "rows": [
+            { "label": "Date of admission", "value": "3 April 2026" },
+            { "label": "Age", "value": "34 years" },
+            { "label": "Diagnosis", "value": "Acute appendicitis" },
+            { "label": "Procedure", "value": "Open appendectomy" },
+            { "label": "Date of operation", "value": "3 April 2026" },
+            { "label": "Time of skin incision", "value": "10:45" }
+          ]
+        },
+        {
+          "heading": "Medication record",
+          "rows": [
+            { "label": "Pre-op antibiotic ordered", "value": "Cefazolin 1 g IV" },
+            { "label": "Time antibiotic ordered", "value": "09:15" },
+            { "label": "Antibiotic administration time", "value": "NOT RECORDED" },
+            { "label": "Administered by (signature)", "value": "NOT RECORDED" }
+          ]
+        },
+        {
+          "heading": "Post-operative",
+          "rows": [
+            { "label": "Date of discharge", "value": "7 April 2026" },
+            { "label": "Wound at discharge", "value": "Intact, no signs of infection" }
+          ]
+        }
+      ]
+    },
+    "fields": [
+      {
+        "id": "eligible",
+        "label": "Is this case eligible for abstraction? (Inpatient surgery, patient ≥ 18 years, procedure on the measure list)",
+        "options": [
+          { "value": "yes", "label": "Yes — eligible" },
+          { "value": "no",  "label": "No — exclude from measure" }
+        ]
+      },
+      {
+        "id": "antibiotic_ordered",
+        "label": "Was a prophylactic antibiotic ordered before the operation?",
+        "options": [
+          { "value": "yes",    "label": "Yes" },
+          { "value": "no",     "label": "No" },
+          { "value": "unable", "label": "Unable to determine from the record" }
+        ]
+      },
+      {
+        "id": "timing_documented",
+        "label": "Is the administration time documented so you can check the 60-minute criterion?",
+        "options": [
+          { "value": "yes",    "label": "Yes — time is recorded" },
+          { "value": "unable", "label": "No — administration time is missing" }
+        ]
+      },
+      {
+        "id": "criterion_met",
+        "label": "What is the correct abstraction result for this case?",
+        "options": [
+          { "value": "met",     "label": "Criterion met — antibiotic given within 60 minutes of incision" },
+          { "value": "not_met", "label": "Criterion not met — antibiotic not given within 60 minutes" },
+          { "value": "exclude", "label": "Exclude from measure — insufficient data to determine timing" }
+        ]
+      }
+    ]
+  },
+  "answer": {
+    "fields": {
+      "eligible":           "yes",
+      "antibiotic_ordered": "yes",
+      "timing_documented":  "unable",
+      "criterion_met":      "exclude"
+    }
+  },
+  "debrief": {
+    "correct": "Correct. The antibiotic was ordered, but the administration time was never recorded. Without a documented time, you cannot determine whether the 60-minute criterion was met. The correct abstraction result is **exclude** — not 'met' and not 'not met'. Counting this case as a failure would unfairly penalise the team if the antibiotic was actually given on time. Counting it as a pass would inflate the compliance rate. Exclusion flags the documentation gap so it can be fixed.",
+    "wrong": "Trace through each field. The case is eligible (inpatient surgery, adult, appendectomy is on the measure list). An antibiotic was ordered (Cefazolin 1 g IV at 09:15). But the administration time is not recorded — so you cannot calculate the interval to the 10:45 incision. When you cannot determine timing from the record, the correct abstraction is 'exclude from measure due to insufficient data' — not 'met' (you do not know) and not 'not met' (you also do not know).",
+    "rule_cited": "Chart abstraction — data completeness and exclusion rules. NAHQ HQ Essentials: Chart Abstraction for Quality Measurement.",
+    "citations": ["nahq_hqcf", "who_nqps"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}

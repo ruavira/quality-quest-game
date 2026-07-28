@@ -1,0 +1,30 @@
+{
+  "id": "A2-runs-rule",
+  "module": "A",
+  "tier": 2,
+  "lo_id": "A.2.11",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["run_chart_rules", "signal_vs_noise"],
+  "setting_variant": "any",
+  "title": "The runs rule — the technical fourth check",
+  "brief": "Three of the four run-chart signals are easy to eyeball: a shift (six on one side), a trend (five in one direction), and an astronomical point (one obvious outlier). The fourth — the **runs** rule — is more technical.\n\nA 'run' is a set of consecutive points on the same side of the median. You count how many runs the chart has and compare that number to a lookup table for that many data points.",
+  "task": {
+    "stem": "A chart has far FEWER runs (fewer crossings of the median) than the lookup table expects for its number of points. What does that suggest?",
+    "options": [
+      { "label": "Nothing — the number of runs is never meaningful." },
+      { "label": "A non-random signal — too few runs means the data is clustering on one side; check the count against the runs lookup table." },
+      { "label": "The median must have been calculated incorrectly." },
+      { "label": "You should immediately add control limits to the chart." }
+    ]
+  },
+  "answer": { "correctIndex": 1 },
+  "debrief": {
+    "correct": "Yes. **Too few runs** (the line rarely crosses the median) or **too many runs** (it crosses far more often than chance) both signal non-random behaviour. Unlike the eyeball rules, the runs rule is judged against a **lookup table**: for a given number of points, the table gives the expected minimum and maximum number of runs, and falling outside that range is the signal. It is the 'technical fourth check' — reach for the table when the other three rules are quiet but the pattern still looks off. You do not need to memorise the table; you need to know it exists and how to use it.",
+    "wrong": "The runs rule counts how many times the line crosses the median. **Too few or too many runs** — compared with a lookup table for that number of points — is a non-random signal. It is a real rule (the number of runs is meaningful), it is not about a mis-calculated median, and it does not require control limits (those belong to SPC / Part 2). Use the lookup table; you don't have to memorise it.",
+    "rule_cited": "Runs rule (number of runs vs the runs lookup table) — Provost & Murray (2nd ed.), IHI QI 104.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

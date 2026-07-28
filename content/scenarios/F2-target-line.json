@@ -1,0 +1,59 @@
+{
+  "id": "F2-target-line",
+  "module": "F",
+  "tier": 2,
+  "lo_id": "F.2.1",
+  "itemType": "DEFEND",
+  "chartType": "pChart",
+  "competency_tags": ["dashboard_misuse", "spc_basics", "leadership_dashboard"],
+  "setting_variant": "any",
+  "title": "The board wants a target line on the control chart",
+  "brief": "At the {{board_meeting}} last week, the {{exec}} asked you to ‘draw the 90% target line across the control chart so we can see whether we are missing it.’\n\nThe chart on screen is the p-chart below — proportion of inpatient discharges with a completed medication reconciliation, by month. The team wants advice before next week’s meeting.",
+  "exhibit": {
+    "kind": "svg-pchart",
+    "chartType": "pChart",
+    "title": "Medication reconciliation completion at discharge — monthly p-chart",
+    "data": [
+      { "x": "M1",  "defective": 102, "total": 120 },
+      { "x": "M2",  "defective":  88, "total": 110 },
+      { "x": "M3",  "defective":  95, "total": 115 },
+      { "x": "M4",  "defective": 105, "total": 125 },
+      { "x": "M5",  "defective":  90, "total": 108 },
+      { "x": "M6",  "defective":  98, "total": 116 },
+      { "x": "M7",  "defective": 108, "total": 124 },
+      { "x": "M8",  "defective":  92, "total": 112 },
+      { "x": "M9",  "defective": 100, "total": 118 },
+      { "x": "M10", "defective":  95, "total": 116 },
+      { "x": "M11", "defective": 104, "total": 122 },
+      { "x": "M12", "defective":  97, "total": 115 }
+    ]
+  },
+  "task": {
+    "stem": "How do you respond to the {{exec}}?",
+    "options": [
+      { "label": "Draw the 90% line across as the upper control limit; explain that any month above the line is a special-cause signal." },
+      { "label": "Decline the request: a target is not a control limit; instead, annotate the target on a run-chart view of the same data, and explain what the p-chart’s control limits do say." },
+      { "label": "Re-compute the control limits using 90% as the centre line, so the chart shows whether we are at target." },
+      { "label": "Remove the control limits entirely and show only the data points." }
+    ],
+    "reasonStem": "Why?",
+    "reasons": [
+      { "label": "Because targets and control limits answer different questions: targets are aspirational; control limits describe the natural variation of the current system. Confusing them invites the wrong action." },
+      { "label": "Because the board owns the chart and can set whatever lines they like." },
+      { "label": "Because medication reconciliation is too complex to chart at all." },
+      { "label": "Because control limits should only be drawn when at least 24 baseline data points exist." }
+    ]
+  },
+  "answer": {
+    "correctIndex": 1,
+    "correctReasonIndex": 0
+  },
+  "debrief": {
+    "correct": "Exactly. **A target line is not a control limit.** Control limits describe the natural variation of the current system; a target describes where you want the system to be. Drawing the target as a UCL would re-label every month above it as ‘special cause’ — which it is not — and pull the team into chasing false signals. The right move is to keep the p-chart (with its proper, subgroup-varying control limits) and **annotate the target on a run-chart view** of the same data, or in commentary alongside it. The conversation then becomes: ‘The current system is centred near 84%; reaching 90% will require a deliberate change. Here is what we propose to test.’",
+    "wrong": "This is the most common dashboard misuse in healthcare leadership reporting. **Control limits describe the system as it currently behaves**; **targets describe where leaders want it to be**. They are not interchangeable, and drawing a target as a UCL turns ordinary monthly variation into false ‘special cause’ alarms. Keep the p-chart with its proper limits, **annotate the target separately**, and use the gap between the current centre line and the target to drive a change plan.",
+    "rule_cited": "Targets vs control limits — Provost & Murray ch. 5 (and the ‘category error’ caveat called out in IHI QI 104).",
+    "citations": ["provost_murray_2nd", "ihi_qi_104", "nahq_hqcf"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": false }
+}

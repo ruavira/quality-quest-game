@@ -1,0 +1,16 @@
+{
+  "name": "Quality Quest",
+  "short_name": "QQ",
+  "description": "An offline-capable learning game for healthcare quality and patient safety professionals.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F7F9FC",
+  "theme_color": "#0A6E8F",
+  "lang": "en",
+  "icons": [
+    { "src": "./assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "categories": ["education", "medical", "productivity"]
+}

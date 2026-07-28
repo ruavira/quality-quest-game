@@ -1,0 +1,45 @@
+{
+  "id": "E2-achs-equip",
+  "module": "E",
+  "tier": 2,
+  "lo_id": "E.2.2",
+  "accrediting_body": "ACHS",
+  "itemType": "MCQ",
+  "chartType": "none",
+  "competency_tags": ["ACHS", "EQuIP-National", "patient-experience", "improvement-trajectory", "run-chart"],
+  "setting_variant": "higher_resource",
+  "title": "ACHS EQuIP National: Building an Improvement Trajectory for Patient Experience Data",
+  "brief": "A hospital in Brisbane, Australia is preparing for its Australian Council on Healthcare Standards (ACHS) EQuIP National survey. The self-assessment against the 'Partnering with Consumers' standard shows that 38% of required patient experience data points are currently being collected. The standard requires at least 80%. The survey is four months away.",
+  "task": {
+    "stem": "Which approach best demonstrates genuine improvement by the time of the survey?",
+    "options": [
+      {
+        "label": "Implement a systematic patient experience survey at every discharge starting immediately, report the monthly collection rate to the quality committee, document the improvement trajectory with a run chart, and present the improvement story — not just the final number — to the surveyor."
+      },
+      {
+        "label": "Revise the self-assessment target downward from 80% to 40% to match the hospital's current level of performance, then demonstrate 100% compliance with the revised target."
+      },
+      {
+        "label": "Collect a concentrated burst of patient experience surveys in the week immediately before the survey to reach 80% for that week alone."
+      },
+      {
+        "label": "Submit the self-assessment as it stands without addressing the gap, and explain to the surveyor that four months is not enough time to make a meaningful improvement."
+      }
+    ]
+  },
+  "answer": { "correctIndex": 0 },
+  "debrief": {
+    "correct": "ACHS EQuIP National is the current accreditation programme of the Australian Council on Healthcare Standards. The 'Partnering with Consumers' standard reflects the principle that health services must actively collect and use patient experience data to improve care. ACHS surveyors are trained to look for improvement trajectories — a run chart showing month-by-month growth from 38% toward 80% is strong evidence of a genuine and sustained quality improvement effort. Starting at once, reporting monthly, and presenting the data story is far more compelling than a single end-point number. Four months of real data, well documented, is meaningful evidence.",
+    "wrong": "ACHS sets the standards, not individual hospitals; the 80% threshold cannot be revised to match current performance — doing so would misrepresent the self-assessment and undermine its purpose. Collecting surveys only in the week before the survey creates an artificial spike that surveyors will detect when they review trend data over time; this approach may also raise integrity concerns. Explaining that four months is insufficient without providing any evidence of action or a credible plan will be assessed as an inadequate response to a known gap — surveyors expect initiative, not inaction.",
+    "rule_cited": "ACHS EQuIP National requires facilities to demonstrate ongoing improvement against standard requirements; surveyors assess the quality of the improvement trajectory, not only the final compliance figure.",
+    "citations": ["achs"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": {
+    "clinical": null,
+    "statistical": null,
+    "instructional": null,
+    "plain_language": null,
+    "context_review_pending": true
+  }
+}

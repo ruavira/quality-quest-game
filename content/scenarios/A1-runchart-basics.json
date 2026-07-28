@@ -1,0 +1,46 @@
+{
+  "id": "A1-runchart-basics",
+  "module": "A",
+  "tier": 1,
+  "lo_id": "A.1.1",
+  "itemType": "MCQ",
+  "chartType": "run",
+  "competency_tags": ["run_chart_basics", "signal_vs_noise"],
+  "setting_variant": "lower_resource",
+  "title": "Reading a run chart",
+  "brief": "You are the quality focal person at a district hospital. Your team has been tracking the proportion of mothers initiating breastfeeding within one hour of delivery on the postnatal ward. The chart below shows the last 14 months of weekly data, plotted with a median line.\n\nBefore you draw any conclusions, you want to make sure you can read this run chart correctly.",
+  "exhibit": {
+    "kind": "svg-runchart",
+    "chartType": "run",
+    "title": "Early breastfeeding initiation rate (weekly), district hospital",
+    "xLabel": "Week",
+    "yLabel": "Initiation rate (%)",
+    "data": [
+      { "x": "W1",  "y": 62 }, { "x": "W2",  "y": 58 }, { "x": "W3",  "y": 64 },
+      { "x": "W4",  "y": 60 }, { "x": "W5",  "y": 66 }, { "x": "W6",  "y": 61 },
+      { "x": "W7",  "y": 63 }, { "x": "W8",  "y": 67 }, { "x": "W9",  "y": 64 },
+      { "x": "W10", "y": 65 }, { "x": "W11", "y": 62 }, { "x": "W12", "y": 66 },
+      { "x": "W13", "y": 64 }, { "x": "W14", "y": 63 }
+    ],
+    "median": 63.5,
+    "yMin": 50, "yMax": 80
+  },
+  "task": {
+    "stem": "Which statement best describes what the dashed line across the middle of this run chart represents?",
+    "options": [
+      { "label": "The target the team is trying to reach." },
+      { "label": "The median of all data points on the chart." },
+      { "label": "The upper control limit (UCL)." },
+      { "label": "The average for the most recent four weeks." }
+    ]
+  },
+  "answer": { "correctIndex": 1 },
+  "debrief": {
+    "correct": "Yes. The horizontal line on a run chart is the **median** of the data plotted. The median splits the points into halves and is what most run-chart rules (shift, trend, runs) reference. Run charts do **not** have control limits — those belong on Shewhart (control) charts such as p, u, c, or I-MR charts.",
+    "wrong": "The horizontal line on a run chart is the **median** of the data plotted — not a target, not a control limit, and not a recent average. The median is the reference for run-chart rules (shift, trend, runs). If you see lines labelled UCL/LCL, you are looking at a control chart, not a run chart.",
+    "rule_cited": "Run chart anatomy — Provost & Murray (2nd ed.), ch. 4.",
+    "citations": ["provost_murray_2nd", "ihi_qi_104"]
+  },
+  "authors": ["Quality Quest core"],
+  "review": { "clinical": null, "statistical": null, "instructional": null, "plain_language": null, "context_review_pending": true }
+}
