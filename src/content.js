@@ -19,15 +19,19 @@ export async function loadContent() {
     fetchJson(`${CONTENT_BASE}/scenarios/manifest.json`),
   ]);
 
-  const scenarios = [];
-  for (const file of manifest.files) {
+  // The production library contains dozens of small JSON files. Loading them
+  // serially multiplies network latency, while requesting all of them at once
+  // can overwhelm a low-bandwidth connection. A small worker pool keeps startup
+  // quick without creating an uncontrolled request burst.
+  const scenarios = (await mapConcurrent(manifest.files, 8, async (file) => {
     try {
-      const s = await fetchJson(`${CONTENT_BASE}/scenarios/${file}`);
-      if (validateScenario(s)) scenarios.push(s);
-    } catch (e) {
-      console.warn(`[content] failed to load ${file}`, e);
+      const scenario = await fetchJson(`${CONTENT_BASE}/scenarios/${file}`);
+      return validateScenario(scenario) ? scenario : null;
+    } catch (error) {
+      console.warn(`[content] failed to load ${file}`, error);
+      return null;
     }
-  }
+  })).filter(Boolean);
 
   cache = { modules, scenarios, glossary, citations };
   return cache;
@@ -37,6 +41,19 @@ async function fetchJson(url) {
   const res = await fetch(url, { cache: "force-cache" });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return res.json();
+}
+
+async function mapConcurrent(items, limit, work) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (cursor < items.length) {
+      const index = cursor++;
+      results[index] = await work(items[index], index);
+    }
+  });
+  await Promise.all(workers);
+  return results;
 }
 
 function validateScenario(s) {

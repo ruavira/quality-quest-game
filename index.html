@@ -6,9 +6,8 @@
   <meta name="theme-color" content="#0A6E8F" />
   <meta name="description" content="Quality Quest — an offline-capable learning game for healthcare quality and patient safety professionals." />
   <title>Quality Quest</title>
-  <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" type="image/svg+xml" href="./assets/icons/icon.svg" />
-  <link rel="apple-touch-icon" href="./assets/icons/icon.svg" />
+  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png" />
   <link rel="stylesheet" href="./styles/app.css" />
 </head>
 <body>
@@ -44,8 +43,29 @@
          <a href="./DESIGN_PLAN_V2.md">Design plan</a></p>
     </footer>
   </div>
-  <script type="module" src="./src/main.js"></script>
   <script>
+    // ES modules, fetch(), manifests, and service workers require HTTP(S).
+    // Give people who double-click the downloaded source a useful route forward
+    // instead of leaving the application on an unexplained Loading screen.
+    if (location.protocol === "file:") {
+      document.getElementById("app-root").innerHTML = `
+        <div class="card">
+          <h2>Open Quality Quest from its web address</h2>
+          <p>This downloaded source file cannot run directly in Chrome. Use the secure hosted app, then choose <strong>Install Quality Quest</strong> to add it to your desktop.</p>
+          <p><a class="btn btn-primary" href="https://quality-quest.pages.dev/">Open Quality Quest</a></p>
+        </div>`;
+    } else {
+      const manifest = document.createElement("link");
+      manifest.rel = "manifest";
+      manifest.href = "./manifest.webmanifest";
+      document.head.append(manifest);
+
+      const appScript = document.createElement("script");
+      appScript.type = "module";
+      appScript.src = "./src/main.js";
+      document.body.append(appScript);
+    }
+
     // Lightweight nav wiring — defers to main.js' routing
     document.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-nav]");

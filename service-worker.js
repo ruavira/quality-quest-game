@@ -1,6 +1,6 @@
 // Quality Quest — service worker (precache app shell + content for offline use).
 
-const VERSION = "qq-v2-2026-07-28";
+const VERSION = "qq-v2.1-2026-07-28";
 
 const APP_SHELL = [
   "./",
@@ -25,6 +25,8 @@ const APP_SHELL = [
   "./src/ui/caseFile.js",
   "./src/ui/install.js",
   "./assets/icons/icon.svg",
+  "./assets/icons/icon-192.png",
+  "./assets/icons/icon-512.png",
   "./content/modules.json",
   "./content/glossary.json",
   "./content/citations.json",

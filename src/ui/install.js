@@ -8,7 +8,7 @@ export function setupInstall(rootEl, state, setMeta) {
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
     deferred = e;
-    // Optional: expose a manual button in settings
+    showStandardInstallPrompt(rootEl, deferred, setMeta);
   });
 
   // iOS Safari path (no beforeinstallprompt)
@@ -17,6 +17,31 @@ export function setupInstall(rootEl, state, setMeta) {
     const sevenDays = 7 * 24 * 60 * 60 * 1000;
     if (Date.now() - last > sevenDays) showIOSCoachMark(rootEl, setMeta);
   }
+}
+
+function showStandardInstallPrompt(rootEl, promptEvent, setMeta) {
+  if (document.querySelector(".install-prompt") || isStandalone()) return;
+  const node = h("aside", { class: "coach-mark install-prompt", role: "status" },
+    h("p", {}, h("strong", {}, "Install Quality Quest"), " for one-click desktop access and offline use after the first successful load."),
+    h("div", { class: "install-actions" },
+      h("button", {
+        class: "btn btn-primary",
+        onclick: async () => {
+          await promptEvent.prompt();
+          const choice = await promptEvent.userChoice;
+          if (choice?.outcome === "accepted") node.remove();
+        },
+      }, "Install Quality Quest"),
+      h("button", {
+        class: "btn btn-ghost",
+        onclick: () => {
+          setMeta("installPromptDismissedAt", Date.now());
+          node.remove();
+        },
+      }, "Not now"),
+    ),
+  );
+  rootEl.append(node);
 }
 
 function showIOSCoachMark(rootEl, setMeta) {

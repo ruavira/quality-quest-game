@@ -512,6 +512,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
   box-shadow: var(--shadow-lg);
   z-index: 100;
 }
+
+.install-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
 .coach-mark p { margin: 0; font-size: var(--fs-sm); }
 .coach-mark button {
   background: transparent; color: var(--paper-0); border: 1px solid var(--paper-0);

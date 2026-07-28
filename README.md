@@ -55,6 +55,12 @@ The intended release flow is:
 
 See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), and [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md).
 
+## Share with participants
+
+Send participants the hosted address — **https://quality-quest.pages.dev/** — rather than the repository or a downloaded `index.html` file. After the first successful load, supported browsers offer an **Install Quality Quest** action for desktop or home-screen access.
+
+See [docs/PARTICIPANT-GUIDE.md](docs/PARTICIPANT-GUIDE.md) for copy-ready joining and installation instructions.
+
 ## Content principles
 
 - Improvement, not punishment
