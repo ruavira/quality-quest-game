@@ -1,78 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0A6E8F" />
-  <meta name="description" content="Quality Quest — an offline-capable learning game for healthcare quality and patient safety professionals." />
-  <title>Quality Quest</title>
-  <link rel="icon" type="image/svg+xml" href="./assets/icons/icon.svg" />
-  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png" />
-  <link rel="stylesheet" href="./styles/app.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=/dfqi-growth-system/">
+  <title>DFQI Growth Operating System — Staging</title>
+  <link rel="canonical" href="/dfqi-growth-system/">
 </head>
 <body>
-  <div id="app">
-    <header class="app-header">
-      <div class="brand" aria-label="Quality Quest">
-        <svg viewBox="0 0 32 32" aria-hidden="true">
-          <rect x="1" y="1" width="30" height="30" rx="6" fill="#0A6E8F" />
-          <path d="M5 22 L11 14 L17 18 L23 9" stroke="#FFFFFF" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-          <line x1="5" y1="18" x2="27" y2="18" stroke="#1796B8" stroke-width="1.5" stroke-dasharray="2 3" />
-        </svg>
-        <span>Quality Quest</span>
-      </div>
-      <nav class="app-nav" aria-label="Primary">
-        <button type="button" data-nav="profile">Path</button>
-        <button type="button" data-nav="casefile">Case File</button>
-      </nav>
-    </header>
-    <main id="app-root" aria-live="polite">
-      <noscript>
-        <div class="card">
-          <h2>Quality Quest needs JavaScript.</h2>
-          <p>Please enable JavaScript to play. Once loaded, the game works fully offline.</p>
-        </div>
-      </noscript>
-      <div class="card">
-        <p>Loading…</p>
-      </div>
-    </main>
-    <footer style="margin-top: 48px; color: var(--ink-500); font-size: 0.875rem;">
-      <p>Quality Quest · A learning tool, not a credential. · Published by Ruavira Collective Inc. ·
-         <a href="./README.md">About</a> ·
-         <a href="./DESIGN_PLAN_V2.md">Design plan</a></p>
-    </footer>
-  </div>
-  <script>
-    // ES modules, fetch(), manifests, and service workers require HTTP(S).
-    // Give people who double-click the downloaded source a useful route forward
-    // instead of leaving the application on an unexplained Loading screen.
-    if (location.protocol === "file:") {
-      document.getElementById("app-root").innerHTML = `
-        <div class="card">
-          <h2>Open Quality Quest from its web address</h2>
-          <p>This downloaded source file cannot run directly in Chrome. Use the secure hosted app, then choose <strong>Install Quality Quest</strong> to add it to your desktop.</p>
-          <p><a class="btn btn-primary" href="https://quality-quest.pages.dev/">Open Quality Quest</a></p>
-        </div>`;
-    } else {
-      const manifest = document.createElement("link");
-      manifest.rel = "manifest";
-      manifest.href = "./manifest.webmanifest";
-      document.head.append(manifest);
-
-      const appScript = document.createElement("script");
-      appScript.type = "module";
-      appScript.src = "./src/main.js";
-      document.body.append(appScript);
-    }
-
-    // Lightweight nav wiring — defers to main.js' routing
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-nav]");
-      if (!btn) return;
-      const screen = btn.getAttribute("data-nav");
-      window.dispatchEvent(new CustomEvent("qq:nav", { detail: { screen } }));
-    });
-  </script>
+  <p>Opening the DFQI Growth Operating System staging build…</p>
+  <p><a href="/dfqi-growth-system/">Continue</a></p>
 </body>
 </html>
