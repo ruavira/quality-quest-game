@@ -1,0 +1,7 @@
+:root {
+  --ink:#16242a; --muted:#60727a; --teal:#0b615f; --teal-dark:#084c4b; --teal-soft:#e9f4f2;
+  --orange:#d77625; --orange-soft:#fff2e6; --slate:#6c7a82; --surface:#ffffff; --canvas:#f5f8f7;
+  --line:#d9e3df; --success:#256a3b; --success-soft:#ecf7ef; --danger:#9f3232; --danger-soft:#fff0f0;
+  --shadow:0 14px 34px rgba(15,44,38,.09); --radius:18px; --radius-sm:11px;
+  --max:1180px;
+}
